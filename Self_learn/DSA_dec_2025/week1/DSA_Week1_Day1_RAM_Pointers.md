@@ -256,17 +256,18 @@ Address    | Contents      | Variable Name
 
 ### 5.1 Time Complexity
 
-| Operation           | Time Complexity | Notes                                      |
-|─────────────────────|─────────────────|─────────────────────────────────────────────|
-| Access by address   | O(1)            | CPU fetches from RAM directly               |
-| Dereference pointer | O(1)            | Same as above (just an indirection)         |
-| Array access        | O(1)            | Address = base + offset * size              |
-| Linked list access  | O(n)            | Must traverse from head                     |
+| Operation           | Time Complexity | Notes                                |
+|---------------------|-----------------|--------------------------------------|
+| Access by address   | O(1)            | CPU fetches from RAM directly         |
+| Dereference pointer | O(1)            | Same as above (just an indirection)   |
+| Array access        | O(1)            | Address = base + offset * size        |
+| Linked list access  | O(n)            | Must traverse from head               |
+
 
 ### 5.2 Space Complexity
 
 | Data Structure | Memory Per Element | Overhead              |
-|────────────────|────────────────────|-----------------------|
+|---|---|---|
 | Array          | 8 bytes (int)      | None (contiguous)     |
 | Linked List    | 8 bytes + 8 bytes  | Pointer per node      |
 | Pointer        | 8 bytes (64-bit)   | Stores an address     |
