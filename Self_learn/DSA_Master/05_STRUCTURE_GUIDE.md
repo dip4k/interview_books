@@ -174,7 +174,7 @@ Each topic has these 11 sections (see TEMPLATE.md for details):
 8. 8️⃣ Mathematical Perspective (formality)
 9. 9️⃣ Algorithmic Design (when to use)
 10. 🔟 Knowledge Check (Socratic questions)
-11. 11️⃣ Retention Hook (memory anchors)
+11. 1️⃣1️⃣ Retention Hook (memory anchors)
 
 ### Navigation Within Topic
 

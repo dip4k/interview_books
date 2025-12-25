@@ -156,7 +156,7 @@ Each file has 11 comprehensive sections:
 8. **8️⃣ Mathematical Perspective** — Formal definitions, proofs, recurrence relations
 9. **9️⃣ Algorithmic Design** — When to use, trade-offs, decision frameworks
 10. **🔟 Knowledge Check** — Socratic reasoning questions
-11. **11️⃣ Retention Hook** — One-liner, mnemonic, geometric visualization
+11. **1️⃣1️⃣ Retention Hook** — One-liner, mnemonic, geometric visualization
 
 ---
 

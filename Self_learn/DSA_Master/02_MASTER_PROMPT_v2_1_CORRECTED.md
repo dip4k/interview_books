@@ -145,7 +145,7 @@ Every topic follows this structure:
 
 **Why this matters:** Answering hard questions cements understanding. Struggling productively is how learning happens.
 
-### 11️⃣ **Retention Hook — Memory Anchors**
+### 1️⃣1️⃣ **Retention Hook — Memory Anchors**
 *Answer: "How do I remember this long-term?"*
 
 - One-line essence

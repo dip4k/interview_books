@@ -282,7 +282,7 @@ Implementation can vary (array, linked list, deque), but interface is constant.
 
 ---
 
-## 11️⃣ Retention Hook
+## 1️⃣1️⃣ Retention Hook
 
 **One-liner:** Stacks and queues are **ordering policies** (LIFO/FIFO) layered on top of arrays or linked lists, enforcing access constraints.
 

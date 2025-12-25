@@ -258,7 +258,7 @@ Complexity arises from graph traversal (pointer chasing), not arithmetic.
 
 ---
 
-## 11️⃣ Retention Hook
+## 1️⃣1️⃣ Retention Hook
 
 **One-liner:** Linked lists are **pointer chains** — flexible structure, slow traversal, fast edits at known positions.
 

@@ -387,7 +387,7 @@ Your reasoning:
 
 ---
 
-## 11️⃣ Retention Hook — Memory Anchors
+## 1️⃣1️⃣ Retention Hook — Memory Anchors
 
 ### One-Line Essence
 

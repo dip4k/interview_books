@@ -99,7 +99,7 @@ For every topic or problem taught, you must strictly follow this structure:
 - **Goal:** Force productive struggling to cement understanding.
 *Answer: "Can you reason about this deeply?"*
 
-### 11️⃣ Retention Hook — Memory Anchors
+### 1️⃣1️⃣ Retention Hook — Memory Anchors
 *Context: Long-term storage.*
 - One-line essence
 - Mnemonic devices

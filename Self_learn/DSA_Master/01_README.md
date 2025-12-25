@@ -83,7 +83,7 @@ Every topic in this system follows the same structure:
 8. **8️⃣ Mathematical Perspective** — Formal definitions, proofs
 9. **9️⃣ Algorithmic Design** — When to use, trade-offs
 10. **🔟 Knowledge Check** — Socratic reasoning questions
-11. **11️⃣ Retention Hook** — One-liner, mnemonics, visual anchors
+11. **1️⃣1️⃣ Retention Hook** — One-liner, mnemonics, visual anchors
 
 This consistency helps your brain recognize patterns and deepens retention.
 

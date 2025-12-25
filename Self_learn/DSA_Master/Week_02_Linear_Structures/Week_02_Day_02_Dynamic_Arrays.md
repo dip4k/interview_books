@@ -211,7 +211,7 @@ Cost(append) = (actual cost per operation + accumulated future cost spread over 
 
 ---
 
-## 11️⃣ Retention Hook
+## 1️⃣1️⃣ Retention Hook
 
 **One-liner:** Dynamic arrays are **arrays that stretch geometrically** — O(1) indexing, O(1) amortized appends, occasional O(n) resize.
 
