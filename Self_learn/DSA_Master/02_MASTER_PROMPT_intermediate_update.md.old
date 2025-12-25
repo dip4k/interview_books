@@ -1,0 +1,342 @@
+# 📘 UPDATED MASTER PROMPT TEMPLATE - WITH ALL TIERS
+
+**Comprehensive DSA Learning Plan - 12 Patterns, 3 Tiers, 85-95% Interview Coverage**
+
+---
+
+## EXECUTIVE SUMMARY
+
+This document outlines a **complete, tier-based DSA learning path** that incorporates problem-solving patterns at appropriate learning stages. The plan is designed to maximize interview readiness while respecting cognitive load and pattern interconnections.
+
+**Key Insight:** Not all patterns are equally important or foundational. Tier 1 patterns are essential prerequisites; Tier 2 builds on them; Tier 3 provides extensions and variations.
+
+---
+
+## THE 3-TIER SYSTEM
+
+### TIER 1: ESSENTIAL PATTERNS ⭐⭐⭐ (Week 4.5)
+**Already Created - 7 Files Ready**
+
+These patterns are used in **70%+ of interview problems** and are prerequisites for all other patterns.
+
+| Pattern | File | Duration | Usage | Priority |
+|---------|------|----------|-------|----------|
+| Hash Map/Set | code_file:109 | 90 min | 70% of problems | 🔴 CRITICAL |
+| Monotonic Stack | code_file:110 | 90 min | 20-30% of stack problems | 🔴 CRITICAL |
+| Merge Operations | code_file:111 | 90 min | 30% of array/list problems | 🔴 CRITICAL |
+| Partition | code_file:112 | 90 min | 15% of array problems | 🔴 CRITICAL |
+
+**Status:** ✅ COMPLETE - 4 learning files + 3 support files
+
+---
+
+### TIER 2: IMPORTANT PATTERNS ⭐⭐ (Weeks 5-5.5)
+**To Be Created - 4 Files Planned**
+
+These patterns build on Tier 1 and add **10-12% more interview coverage**. Learn after completing Tier 1.
+
+| Pattern | File | Duration | Usage | When to Learn |
+|---------|------|----------|-------|---------------|
+| Difference Array | code_file:116 | 90 min | 10-15% of range problems | Week 5, Day 1 |
+| In-Place Replacement | code_file:117 | 90 min | 8-12% of array problems | Week 5, Day 2 |
+| Deque Operations | code_file:118 | 90 min | 5-10% of sliding window | Week 5.5, Day 1 |
+| Kadane's Algorithm | code_file:112* | 45 min | 10% of DP/array problems | Week 4.5, Day 4* |
+
+*Kadane's already included in Week 4.5, Day 4 (Partition & Kadane's combined)
+
+**Why Important:**
+- Difference Array: Optimizes range updates from O(n×k) to O(n+k)
+- In-Place Replacement: Space optimization (interview preference)
+- Deque: Optimizes sliding window from O(n log n) to O(n)
+- Kadane's: Classic DP pattern, foundation for advanced DP
+
+---
+
+### TIER 3: GOOD-TO-KNOW PATTERNS ⭐ (Week 6.5+)
+**To Be Created - 4 Files Planned - Optional Learnings**
+
+These patterns provide **5-8% more coverage** and are useful extensions/variations. Learn after non-linear structures.
+
+| Pattern | File | Duration | Usage | When to Learn |
+|---------|------|----------|-------|---------------|
+| Fast & Slow Pointers (Extended) | code_file:119 | 90 min | 3-5% of linked list | Week 6.5, Pattern 1 |
+| Reverse & Two Pointers | code_file:120 | 90 min | 5-8% of string/array | Week 6.5, Pattern 2 |
+| Matrix Traversal | code_file:121 | 90 min | 3-5% of matrix problems | Week 6.5, Pattern 3 |
+| Conversion & Encoding | code_file:122 | 90 min | 2-3% of string problems | Week 6.5, Pattern 4 |
+
+**Why Good-to-Know:**
+- Extended pointer techniques for linked lists
+- String/array manipulation extensions
+- 2D array traversal patterns
+- String compression and encoding
+
+---
+
+## COMPLETE LEARNING PATH (12-16 Weeks)
+
+### PHASE 1: FOUNDATIONS (Weeks 1-3)
+✅ **Arrays, Strings, Linked Lists, Trees**
+- Basic data structures and operations
+- Fundamentals before patterns
+
+### PHASE 2: LINEAR PATTERNS (Weeks 4-4.5)
+✅ **Week 4:** Pointer Patterns (2-pointer, sliding windows, prefix sums, cycle detection)
+✅ **Week 4.5:** Tier 1 Patterns (Hash, Monotonic Stack, Merge, Partition)
+
+**Status:** Week 4 already completed; Week 4.5 in progress
+
+### PHASE 3: TIER 2 + TIER 1 CONSOLIDATION (Weeks 5-5.5)
+🟡 **Week 5:** Difference Array, In-Place Replacement
+🟡 **Week 5.5:** Deque Operations, Advanced Sliding Windows
+
+**Note:** Kadane already included in Week 4.5
+
+### PHASE 4: NON-LINEAR STRUCTURES (Weeks 6-6)
+🟢 **Graphs, Trees, Heaps**
+- Deep dive into non-linear structures
+- Use Tier 1 & 2 patterns heavily in problems
+
+### PHASE 5: TIER 3 + ADVANCED ALGORITHMS (Weeks 6.5-12)
+🟢 **Week 6.5:** Tier 3 Patterns (Fast & Slow extended, Reverse, Matrix, Encoding)
+🟢 **Weeks 7-12:**
+  - Graph Algorithms (BFS, DFS, Dijkstra, etc.)
+  - Tree Algorithms (Traversals, LCA, etc.)
+  - Dynamic Programming (DP patterns, optimization)
+  - Greedy Algorithms
+  - Backtracking
+  - Advanced Interview Patterns
+
+---
+
+## INTERVIEW COVERAGE BY COMPLETION
+
+| Completion Level | Coverage | Status |
+|------------------|----------|--------|
+| Week 4 only | 40-50% | ❌ Incomplete |
+| Week 4 + 4.5 (Tier 1) | 70-80% | ✅ Strong foundation |
+| +Week 5-5.5 (Tier 2) | 80-88% | ✅✅ Interview ready |
+| +Weeks 6-6.5 (Tier 3) | 85-95% | ✅✅✅ Comprehensive |
+
+---
+
+## RECOMMENDED STUDY SCHEDULE
+
+### THIS WEEK (Week 4.5 - Tier 1)
+```
+Saturday:     Hash Map/Set (90 min + review)
+Sunday:       Monotonic Stack (90 min + review)
+Monday:       Merge Operations (90 min + review)
+Tuesday:      Partition & Kadane's (90 min + review)
+Wed-Thu:      Practice & integration (2-3 hours)
+Friday:       Final review, consolidation, sleep
+```
+
+### NEXT WEEK (Week 5 - Tier 2 First Half)
+```
+Saturday:     Difference Array (90 min + review)
+Sunday:       In-Place Replacement (90 min + review)
+Monday-Fri:   Practice + integration (3-4 hours)
+```
+
+### WEEK AFTER (Week 5.5 - Tier 2 Second Half)
+```
+Saturday-Sun:  Deque Operations (90 min + review)
+Mon-Fri:       Practice + advanced sliding windows
+```
+
+### LATER (Weeks 6+ - Non-Linear + Tier 3)
+```
+Week 6:        Deep dive into graphs, trees, heaps
+Week 6.5:      Tier 3 patterns + advanced algorithms
+Weeks 7-12:    Graph, Tree, DP, Greedy, Backtracking
+```
+
+---
+
+## FILE ORGANIZATION & REFERENCES
+
+### TIER 1: ESSENTIAL (Complete)
+- **code_file:109** → Week_45_Day_01_Combined.md (Hash Map/Set)
+- **code_file:110** → Week_45_Day_02_Combined.md (Monotonic Stack)
+- **code_file:111** → Week_45_Day_03_Combined.md (Merge Operations)
+- **code_file:112** → Week_45_Day_04_Combined.md (Partition & Kadane's)
+- **code_file:113** → Week_45_Guidelines.md (Navigation)
+- **code_file:114** → Week_45_Questions.md (28 Questions)
+- **code_file:115** → Week_45_Checklist.md (Progress Tracking)
+
+### TIER 2: IMPORTANT (To Create)
+- **code_file:116** → Difference Array (Week 5, Day 1)
+- **code_file:117** → In-Place Replacement (Week 5, Day 2)
+- **code_file:118** → Deque Operations (Week 5.5, Day 1)
+- (Kadane's already in code_file:112)
+
+### TIER 3: GOOD-TO-KNOW (To Create)
+- **code_file:119** → Fast & Slow Pointers Extended (Week 6.5)
+- **code_file:120** → Reverse & Two Pointers (Week 6.5)
+- **code_file:121** → Matrix Traversal (Week 6.5)
+- **code_file:122** → Conversion & Encoding (Week 6.5)
+
+---
+
+## KEY PRINCIPLES
+
+### 1. TIER-BASED LEARNING
+- Don't skip Tier 1 (foundational)
+- Don't learn Tier 2 before Tier 1 (not ready)
+- Learn Tier 3 after non-linear structures (optional but recommended)
+
+### 2. SPACED REPETITION
+- Complete one pattern per day (90 min)
+- Review same day (15 min)
+- Practice 5-7 problems per pattern
+- Sleep between days (memory consolidation)
+- Light review after 2 days
+
+### 3. INTERCONNECTION AWARENESS
+- Hash maps used in Tier 2 patterns
+- Monotonic stack extended in deque
+- Partition concept used in in-place operations
+- Tier 3 patterns extend basic pointer concepts
+
+### 4. PRACTICE INTEGRATION
+- Week 4.5: 20+ problems minimum
+- Week 5-5.5: 15+ problems minimum
+- Week 6.5: 10+ problems (Tier 3 extensions)
+- Total: 45+ problems for pattern mastery
+
+---
+
+## SUCCESS CRITERIA
+
+### TIER 1 Success (Week 4.5)
+✅ 4 patterns mastered
+✅ 28 questions answered correctly
+✅ 20+ problems solved
+✅ 70-80% interview coverage
+✅ Confident implementations
+
+### TIER 2 Success (Weeks 5-5.5)
+✅ 4 patterns mastered
+✅ 20+ problems solved
+✅ 80-88% interview coverage
+✅ Interview-ready fundamentals
+
+### TIER 3 Success (Week 6.5)
+✅ 4 pattern extensions learned
+✅ 10+ problems solved
+✅ 85-95% interview coverage
+✅ Comprehensive pattern library
+
+---
+
+## DO'S AND DON'Ts
+
+### DO:
+✅ Complete Tier 1 fully before Tier 2
+✅ Space learning over multiple days
+✅ Trace examples carefully
+✅ Answer all self-assessment questions
+✅ Practice 5+ problems per pattern
+✅ Sleep between learning days
+✅ Review after 2 days
+✅ Move to Tier 2 after Tier 1 mastery
+
+### DON'T:
+❌ Skip Tier 1 (it's essential!)
+❌ Rush through patterns (90 min minimum)
+❌ Cram all patterns in one day
+❌ Skip examples and visualizations
+❌ Skip self-assessment questions
+❌ Learn Tier 2 before Tier 1 mastery
+❌ Learn Tier 3 before non-linear structures
+❌ Skip practice problems
+
+### CAN:
+✅ Do Tier 2 and non-linear structures partially in parallel
+✅ Do Tier 3 anytime after Week 6
+✅ Prioritize Tier 2 patterns by interest
+✅ Practice more than 5-7 problems per pattern
+
+---
+
+## PATTERN INTERCONNECTIONS MAP
+
+```
+TIER 1: Foundation Layer (Week 4.5)
+├─ Hash Map → Foundation for Tier 2, used everywhere
+├─ Monotonic Stack → Extended to Deque in Tier 2
+├─ Merge Operations → Used in algorithms Week 7+
+└─ Partition → Used in quicksort, in-place operations
+
+    ↓ (Linear data structures mastered)
+
+TIER 2: Important Layer (Weeks 5-5.5)
+├─ Difference Array → Range updates, extends prefix sums
+├─ Kadane's Algorithm → DP foundation, extends arrays
+├─ In-Place Replacement → Extends partition concept
+└─ Deque → Advanced monotonic stack, sliding window
+
+    ↓ (Non-linear structures: Graphs, Trees, Heaps)
+
+TIER 3: Extension Layer (Week 6.5+)
+├─ Fast & Slow Pointers → Linked list extensions
+├─ Reverse & Two Pointers → String/array extensions
+├─ Matrix Traversal → 2D array patterns
+└─ Conversion & Encoding → String manipulation
+
+    ↓ (Advanced algorithms: Graph, Tree, DP, Greedy, Backtracking)
+```
+
+---
+
+## PROGRESSION EXAMPLE
+
+**Example Learner Path:**
+
+Week 4 ← Week 4.5 → Week 5 → Week 5.5 → Week 6 → Week 6.5 → Weeks 7-12
+Pointers → **TIER 1** → **TIER 2** → Non-Linear → **TIER 3** → Advanced
+
+Interview Coverage: 40% → **70-80%** → **80-88%** → → **85-95%** → 90%+
+
+---
+
+## MASTER PROMPT INTEGRATION
+
+This template should be integrated into your master learning documentation as:
+
+1. **Learning Plan Reference** - For overall structure
+2. **Weekly Navigation** - Which tier/pattern to learn
+3. **File Organization** - Code file references
+4. **Success Criteria** - Completion standards
+5. **Pattern Tracking** - Progress verification
+
+---
+
+## FINAL NOTES
+
+### Why This Tier System?
+- **Not all patterns equally important**: Tier 1 used 70%+ of time
+- **Foundation required**: Can't learn advanced before basics
+- **Cognitive load management**: Space learning over time
+- **Pattern synergy**: Each tier builds on previous
+- **Interview readiness**: Progressive coverage increase
+
+### Why This Schedule?
+- **Intensive Week 4.5**: Foundation is critical
+- **Measured Tier 2**: Important but less critical than Tier 1
+- **Flexible Tier 3**: Can do anytime, optional depth
+- **Non-linear structures**: Different paradigm, requires fresh learning
+- **Advanced algorithms**: Build on complete foundation
+
+### Expected Outcomes:
+- ✅ 70-80% interview coverage after Week 4.5
+- ✅ 80-88% interview coverage after Week 5.5
+- ✅ 85-95% interview coverage after Week 6.5
+- ✅ 90%+ interview coverage after Weeks 7-12
+
+---
+
+**Generated:** 2025-12-26  
+**Status:** ✅ UPDATED MASTER PROMPT WITH ALL TIERS  
+**Next:** Share with learner, begin Week 4.5
+
