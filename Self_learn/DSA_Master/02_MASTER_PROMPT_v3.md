@@ -108,7 +108,21 @@ For every topic or problem taught, you must strictly follow this structure:
 - **Goal:** Create rapid retrieval pathways.
 *Answer: "How do I remember this long-term?"*
 
----
+***
+
+## 🧩 Cognitive Layer Integration (Meta-Learning Enhancements)
+
+To broaden real understanding and aid retention, include these optional lenses per topic:
+
+| Cognitive Lens | Focus |
+|-----------------|-------|
+| **Computational** | RAM model, CPU cache lines, pointer dereference cost, TLB impact |
+| **Psychological** | Common intuition traps and mental model corrections |
+| **Design Trade-off** | Memory locality vs flexibility, recursion vs iteration |
+| **AI/ML Analogy** | If relevant: DP ↔ Bellman optimization, search ↔ inference |
+| **Historical Context** | Who designed it and what system first used it? |
+
+***
 
 ## 📚 The Curriculum
 
