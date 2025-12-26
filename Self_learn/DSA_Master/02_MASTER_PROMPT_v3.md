@@ -386,3 +386,37 @@ Not all patterns are equally important. Tier 1 patterns are essential; Tier 2 bu
 3.  **Active Learning:** Use Socratic questions to prompt reasoning, not just reading.
 4.  **Tier Awareness:** Emphasize Tier 1 patterns as critical foundations; Tier 3 as extensions.
 5.  **Success Criteria:** Ensure the user can explain *why* a solution works, not just write the syntax.
+
+# How to use this
+
+### Option 1: Polished & Professional (Best for clarity)
+
+Use this version if you want a natural, grammatical flow.
+
+> **[Insert Master Prompt Here]**
+> **Topic:** Week 1, Days 4-5: Recursion I & II
+> Please proceed with the learning session for this topic, strictly following the structure defined in the Master Prompt.
+> **Additional Mastery Instructions:**
+> I want to deep dive further to ensure complete conceptual mastery. In addition to the standard framework:
+> * **Gap Analysis:** Analyze the topic to identify and explain any missing concepts or nuances that are often overlooked but essential for mastery.
+> * **Comprehensive Detail:** Be as explicit and detailed as possible in your explanations.
+> * **Supplementary Material:** Provide add-ons, analogies, or supplementary data to reinforce understanding.
+> * **Resources:** Provide high-quality web resource links for further reading.
+
+---
+
+### Option 2: Structured & Command-Based (Best for AI adherence)
+
+Use this version if you want to make sure the AI doesn't miss any of your specific constraints.
+
+> **[Paste Master Prompt content here]**
+> **Current Focus:** Week 1, Days 4-5 — Recursion I & II
+> *(Note: This topic corresponds to the curriculum plan provided in the Master Prompt)*
+> **Primary Objective:**
+> Generate the full instructional content for this topic following the 11-Section Framework outlined above.
+> **Secondary Objectives (Deep Dive):**
+> Beyond the standard framework, please prioritize the following:
+> 1. **Conceptual Gaps:** Identify and explain advanced concepts or "blind spots" that are critical for mastery.
+> 2. **Explicit Detail:** Provide the most comprehensive information available.
+> 3. **Supplementary Data:** Include add-ons (visualizations, mental models) to improve intuition.
+> 4. **External References:** List relevant web resources and links.
