@@ -1,321 +1,187 @@
-# Week 6 Enhanced Guidelines - Master Overview
+# Week 6 (Graph Foundations): Guidelines
 
-**Week:** 6 | **Focus:** Graph Foundations Mastery  
-**Difficulty:** 🔴 Hard | **Time:** 25-30 hours | **Interview Weight:** 40-60%
+## 📅 Daily Breakdown & Time Allocation
 
----
+**Total Week:** 12-14 hours (2.4-2.8 hours per day)
 
-## 1️⃣ WEEK 6 MISSION
+| Day | Topic | Time | Focus | Coverage |
+|-----|-------|------|-------|----------|
+| **1** | Graph Representations | 2.5h | Matrix vs List, density trade-offs | — |
+| **2** | Breadth-First Search (BFS) | 2.5h | Level-order, shortest path unweighted | 5-8% |
+| **3** | Depth-First Search (DFS) | 2.5h | Deep exploration, topological foundation | 5-8% |
+| **4** | Topological Sort | 2.5h | DAG ordering, dependency resolution | 3-5% |
+| **5** | Union-Find | 2.5h | Disjoint sets, O(α(n)) amortized | 3-5% |
+| **Weekend** | Integration & Review | 2-3h | Pattern combinations, MST | — |
 
-Master five graph algorithms covering **40-60% of graph interview problems**.
-
-From optimization (Week 5.5) → graph foundations (Week 6) → advanced algorithms (Week 7).
-
----
-
-## 2️⃣ THE FIVE TECHNIQUES AT A GLANCE
-
-| Technique | Problem | Solution | Time | Space | Interview % |
-|-----------|---------|----------|------|-------|------------|
-| **Graph Repr.** | Store graphs | Matrix/List | - | O(n²) or O(n+m) | Foundation |
-| **BFS** | Shortest path | Queue, level-by-level | O(V+E) | O(V) | 15-20% |
-| **DFS** | Connectivity | Stack, recursive | O(V+E) | O(V) | 20-25% |
-| **Topo Sort** | Ordering DAG | DFS/Kahn's | O(V+E) | O(V) | 10-15% |
-| **Union-Find** | Components | Parent + compression | O(α(n)) | O(V) | 10-15% |
+**Total:** 12-14 hours, 5 fundamental graph algorithms
 
 ---
 
-## 3️⃣ DAILY BREAKDOWN & TIME ALLOCATION
+## 🎯 Learning Objectives
 
-**Phase 1: Foundations (Days 1-3)** - 9 hours
-- Day 1 Representations: 3 hrs
-- Day 2 BFS: 3 hrs
-- Day 3 DFS: 3 hrs
-
-**Phase 2: Advanced (Days 4-5)** - 6 hours
-- Day 4 Topological Sort: 3 hrs
-- Day 5 Union-Find: 3 hrs
-
-**Phase 3: Mastery (10-15 hours)**
-- Problem solving sprint
-- 20+ problems total
-- Interview simulation
+### By End of Week 6
+- [ ] Understand graph representations and choose wisely
+- [ ] Master BFS for shortest paths (unweighted)
+- [ ] Master DFS for exploration and topological sort
+- [ ] Implement topological sort (DFS and Kahn's)
+- [ ] Implement Union-Find with path compression and rank
+- [ ] Recognize which algorithm fits each graph problem
+- [ ] Understand real-world applications (npm, Gradle, etc.)
+- [ ] Solve 88-98% of interview problems (cumulative)
 
 ---
 
-## 4️⃣ LEARNING OBJECTIVES
+## 📚 Core Concepts
 
-### Knowledge (Understanding)
-- [ ] Two graph representations and trade-offs
-- [ ] BFS for shortest paths in unweighted graphs
-- [ ] DFS for connectivity and exploration
-- [ ] Topological sort for DAGs and dependencies
-- [ ] Union-Find for components and near-O(1) operations
+**Concept 1: Representation Matters**  
+Adjacency matrix O(n²) vs list O(n+m). Density determines choice.
 
-### Skills (Can Do)
-- [ ] Code all 5 algorithms from scratch
-- [ ] Choose representation for problem
-- [ ] Implement BFS with distance tracking
-- [ ] Implement DFS (recursive & iterative)
-- [ ] Implement both topological sort methods
-- [ ] Implement Union-Find with optimizations
+**Concept 2: Traversal Algorithms**  
+BFS level-by-level, DFS deep exploration. Different properties, both O(n+m).
 
-### Application (Where to Use)
-- [ ] Recognize algorithm from problem statement
-- [ ] Solve interview problems in 20-30 minutes
-- [ ] Handle edge cases (disconnected, cycles, etc.)
-- [ ] Discuss complexity and trade-offs
-- [ ] Suggest optimizations
+**Concept 3: Dependency Ordering**  
+Topological sort for DAGs. DFS post-order or Kahn's algorithm.
+
+**Concept 4: Dynamic Connectivity**  
+Union-Find maintains connected components with near-O(1) operations.
 
 ---
 
-## 5️⃣ PATTERN RECOGNITION FRAMEWORK
+## 🔄 Recommended Learning Path
 
-### Decision Tree
+**Each Day (2.5 hours):**
+- Morning (75 min): Read instructional, trace examples, understand mechanics
+- Afternoon (45 min): Solve 3-4 problems, implement from scratch
+- Evening (30 min): Review checklist, rate confidence, compare algorithms
 
-```
-Graph problem?
-
-├─ Find shortest path (unweighted)?
-│  └─ BFS (Day 2)
-├─ Need to explore deeply or backtrack?
-│  └─ DFS (Day 3)
-├─ Need to order tasks with dependencies?
-│  └─ Topological Sort (Day 4)
-├─ Need to find connected components?
-│  └─ Union-Find (Day 5)
-├─ How to store graph?
-│  ├─ Dense (>20% edges)? → Matrix
-│  └─ Sparse (<5% edges)? → Adjacency List
-└─ Still not sure?
-   └─ Reference Decision Matrix
-```
-
-### Keywords Recognition
-
-**BFS triggers:**
-- Shortest path, level-by-level, distance, closest, degree
-
-**DFS triggers:**
-- All paths, backtrack, connectivity, cycle, deep exploration
-
-**Topo Sort triggers:**
-- Dependencies, ordering, prerequisites, DAG, scheduling
-
-**Union-Find triggers:**
-- Connected, components, grouping, merging, sets
-
-**Representation triggers:**
-- Dense vs sparse, O(1) edge lookup, memory constraint
+**Weekend (2-3 hours):**
+- Review all 5 algorithms
+- Solve mixed problems requiring algorithm selection
+- Answer all 25+ interview Q&A pairs
+- Complete integration checklist
 
 ---
 
-## 6️⃣ COMMON MISTAKES & HOW TO AVOID
+## ⚠️ Common Mistakes to Avoid
 
-| Mistake | Why Wrong | Prevention |
-|---------|-----------|-----------|
-| Forget visited set in BFS | Infinite loop | Always mark visited immediately |
-| Use BFS on weighted graph | Doesn't account for weights | Use Dijkstra for weighted |
-| DFS without base case | Stack overflow | Check visited/base case |
-| Topological sort on cyclic graph | Invalid result | Verify DAG first or detect cycle |
-| Union-Find without optimizations | O(n) instead of O(α(n)) | Always use path compression + union by rank |
-| Adjacency matrix for sparse | Memory explosion | Use adjacency list for sparse graphs |
+**Mistake 1: "Use BFS for everything"**  
+Reality: BFS for shortest path unweighted. DFS for topological sort, cycles.
 
----
+**Mistake 2: "Adjacency matrix always slow"**  
+Reality: O(n²) acceptable for dense graphs or small n.
 
-## 7️⃣ INTERVIEW PREPARATION
+**Mistake 3: "Topological sort only for DAGs"**  
+Reality: True. Cycles make it undefined. Must verify no cycles first.
 
-### 30-Second Explanations
+**Mistake 4: "Union-Find is slow"**  
+Reality: O(α(n)) ≈ O(1) amortized with path compression + rank. Near-optimal.
 
-**Graph Representations:**
-> "For sparse graphs I use adjacency list (O(n+m) space). For dense graphs or when O(1) edge lookup critical, I use matrix (O(n²) space)."
-
-**BFS:**
-> "BFS explores level-by-level using a queue. First time we reach a node is guaranteed shortest distance. Time: O(V+E), Space: O(V)."
-
-**DFS:**
-> "DFS explores deep using recursion (or explicit stack). Finds all connected nodes and can detect cycles. Time: O(V+E), Space: O(V) call stack."
-
-**Topological Sort:**
-> "For DAGs, reverse DFS finishing order gives topological sort. Alternatively, Kahn's algorithm removes nodes with in-degree 0. Both O(V+E)."
-
-**Union-Find:**
-> "Path compression + union by rank gives O(α(n)) ≈ O(1) amortized. Used for components, cycle detection, and Kruskal's MST."
-
-### Code in 5 Minutes
-
-- Graph representation: 2-3 lines
-- BFS: 8-10 lines
-- DFS: 6-8 lines
-- Topological: 10-12 lines
-- Union-Find: 15-20 lines (with optimizations)
-
-### Solve in 20-30 Minutes
-
-- Easy problems: 15-20 min
-- Medium problems: 20-30 min
-- Hard problems: 30-45 min
+**Mistake 5: "DFS not useful, BFS better"**  
+Reality: Different properties. DFS for dependencies, BFS for distance.
 
 ---
 
-## 8️⃣ PRACTICE PROGRESSION
+## 🎓 Practice Problems Guide
 
-### Week 6 Problem Target: 20+ Total
+### Graph Representations (4+ problems)
+1. Build adjacency list from edges
+2. Build adjacency matrix
+3. Convert between representations
+4. Count edges/vertices
 
-**By Technique:**
-- Graph representations: 2-3 problems
-- BFS: 3-5 problems
-- DFS: 3-5 problems
-- Topological sort: 2-3 problems
-- Union-Find: 3-5 problems
+### BFS (8+ problems)
+1. Shortest path unweighted
+2. Nodes at distance k
+3. Connected components (BFS variant)
+4. Bipartite graph checking
+5. Word ladder (shortest path variant)
+6. Maze solving
+7. Level-order traversal
+8. All shortest paths
 
-**By Difficulty:**
-- Easy: 7-10 problems (basics)
-- Medium: 7-9 problems (typical interviews)
-- Hard: 2-3 problems (advanced)
+### DFS (8+ problems)
+1. DFS traversal
+2. Cycle detection
+3. Connected components
+4. Number of islands (DFS)
+5. Path exists (DFS)
+6. All paths from source to target
+7. Course schedule (topological sort variant)
+8. Backtracking problems
 
-**Recommended Sources:**
-- LeetCode (primary)
-- HackerRank (alternative)
-- Company-specific archives
+### Topological Sort (5+ problems)
+1. Topological sort (DFS-based)
+2. Topological sort (Kahn's)
+3. Course schedule validity
+4. Build order dependencies
+5. Alien dictionary
 
----
-
-## 9️⃣ RESOURCES & EXTERNAL LINKS
-
-**Visualization:**
-- https://www.cs.usfca.edu/~galles/visualization/BFS.html (BFS)
-- https://www.cs.usfca.edu/~galles/visualization/DFS.html (DFS)
-
-**Practice:**
-- LeetCode Graph tag: 600+ problems
-- HackerRank: Good explanations
-
-**Reference:**
-- [85] Summary (quick lookup)
-- [79-83] Instructional files
-- [87] Q&A with answers
-
----
-
-## 🔟 ASSESSMENT & SUCCESS CRITERIA
-
-### Knowledge Assessment (Rate 1-5)
-
-| Concept | Rating |
-|---------|--------|
-| Graph representations | ___/5 |
-| BFS understanding | ___/5 |
-| DFS understanding | ___/5 |
-| Topological sort | ___/5 |
-| Union-Find | ___/5 |
-
-**Target:** 4/5 on all
-
-### Practical Skills (Can You...)
-
-- [ ] Implement adjacency matrix from scratch in < 2 min
-- [ ] Implement adjacency list from scratch in < 2 min
-- [ ] Code BFS from scratch in < 5 min
-- [ ] Code DFS from scratch in < 5 min
-- [ ] Code topological sort from scratch in < 7 min
-- [ ] Code Union-Find from scratch in < 10 min
-
-### Interview Readiness (Pre-Interview)
-
-- [ ] Explain each technique in 30 sec
-- [ ] Solve easy problems in 15 min
-- [ ] Solve medium problems in 25 min
-- [ ] Recognize which algorithm(s) apply
-- [ ] Write production-quality code
-- [ ] Discuss optimizations
+### Union-Find (6+ problems)
+1. Implement Union-Find
+2. Cycle detection (undirected)
+3. Kruskal's MST
+4. Connected components dynamic
+5. Percolation threshold
+6. Image connected components
 
 ---
 
-## 1️⃣1️⃣ WEEK 6 INTEGRATION POINTS
+## 💼 Interview Preparation
 
-### With Week 5.5 (Optimization)
-- Week 5.5 optimized arrays
-- Week 6 builds on data structures
-- Both require choosing right structure for algorithm
+**Week 6 Coverage:** 8-10% of interview problems (cumulative 88-98%)
 
-### With Week 7 (Advanced Graphs)
-- Dijkstra = BFS + priority queue
-- Bellman-Ford = relaxation via DFS/BFS
-- MST algorithms use Union-Find
-- Advanced problems combine multiple techniques
+**Interview Strategy:**
+1. Identify graph problem type (shortest path? dependencies? connectivity?)
+2. Check if directed/undirected, weighted/unweighted
+3. Choose algorithm (BFS? DFS? Topological? Union-Find?)
+4. Implement cleanly with proper graph representation
+5. Explain time/space complexity and real-world use
 
-### With Interviews
-- Week 6 covers 40-60% of graph problems
-- Essential for Google, Meta, Amazon, Microsoft
-- Tests understanding of graphs + algorithms
-
----
-
-## 1️⃣2️⃣ WEEK 6 TO WEEK 7 TRANSITION
-
-### Before Moving to Week 7, Verify:
-
-✅ **Readiness Checklist:**
-- [ ] Understand all 5 techniques conceptually
-- [ ] Confidence 4/5 on Days 1-5
-- [ ] Solved 20+ problems across all techniques
-- [ ] Can recognize algorithm from problem statement
-- [ ] Can code from scratch in allotted time
-- [ ] Can explain algorithms clearly
-
-✅ **Performance Targets:**
-- [ ] Easy problems: 90% success
-- [ ] Medium problems: 70% success
-- [ ] Hard problems: 50% success
-- [ ] Average time within limits
-
-✅ **Confidence Levels:**
-- [ ] Overall confidence: 4/5
-- [ ] Ready for advanced graph problems: YES
-
-### If Not Ready:
-1. Identify weak technique(s)
-2. Review specific instructional file
-3. Solve 5+ problems on weak technique
-4. Return to readiness checklist
-
-### If Ready:
-→ Proceed to Week 7 (Advanced Graph Algorithms)
+**When Week 6 Matters Most:**
+- Graph problems (15-20% of interviews)
+- Hard problems combining algorithms
+- System design (network topology, dependency graphs)
+- Real-world systems (npm, Gradle, databases)
 
 ---
 
-## 📝 FINAL SUMMARY
+## 🔗 Connection to Other Weeks
 
-| Dimension | Week 6 |
-|-----------|--------|
-| **Topics** | 5 graph algorithms |
-| **Time** | 25-30 hours |
-| **Problems** | 20+ required |
-| **Difficulty** | Hard |
-| **Interview %** | 40-60% of graph problems |
-| **Key Skill** | Pattern recognition for graphs |
-| **Next Step** | Week 7 (Advanced) |
+**Week 5:** Trees are special graphs (connected, acyclic)  
+**Week 5.5:** Optimization patterns apply to graphs  
+**Week 6:** Graph fundamentals, traversal, sorting  
+**Week 7+:** Advanced (MST, shortest path, flows)
 
 ---
 
-## ✅ SUCCESS DEFINITION
+## ❓ Frequently Asked Questions
 
-**You've mastered Week 6 when:**
+**Q: Why both BFS and DFS if both O(n+m)?**
+A: Different properties. BFS guarantees shortest unweighted, DFS natural for recursion and topological sort.
 
-1. **Knowledge:** Can explain all 5 algorithms in detail
-2. **Skills:** Can code all 5 from scratch quickly
-3. **Application:** Can recognize which algorithm(s) apply
-4. **Proficiency:** Can solve medium/hard problems consistently
-5. **Speed:** Can solve problems within time limits
-6. **Confidence:** Feel 4/5 confidence on each technique
+**Q: When use topological sort vs BFS/DFS?**
+A: Topological sort for dependencies (DAGs only). BFS/DFS for general traversal.
+
+**Q: Is Union-Find really O(1)?**
+A: O(α(n)) amortized, which ≈ O(1) for practical sizes (α(2^65536) ≈ 4).
+
+**Q: How know if graph has cycle?**
+A: DFS (back edge), or Union-Find (Find(u) == Find(v) before union).
+
+**Q: Can use BFS for weighted graphs?**
+A: BFS only guarantees shortest for unweighted. Dijkstra's for weighted.
+
+**Q: Is Kruskal's better than Prim's?**
+A: Different trade-offs. Kruskal's O(m log m) with sorting/union-find. Prim's O(n²) or O((n+m) log n).
 
 ---
 
-**Week 6 Enhanced Guidelines Complete**  
-**Status:** Ready for learning  
-**Goal:** Master graph foundations  
-**Outcome:** 40-60% interview coverage  
+## ✅ Before Proceeding to Week 7
 
-**Let's master graphs!** 🚀
+- [ ] Rate 4/5+ on all 5 graph algorithms
+- [ ] Can implement BFS and DFS from memory
+- [ ] Can do topological sort (DFS and Kahn's)
+- [ ] Can implement Union-Find with optimizations
+- [ ] Understand when to use each algorithm
+- [ ] Recognize real-world applications
 

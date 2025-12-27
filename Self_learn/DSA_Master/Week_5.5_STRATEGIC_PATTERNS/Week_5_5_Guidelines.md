@@ -1,309 +1,161 @@
-# Week 5.5 Enhanced Guidelines - Master Overview
+# Week 5.5 (Tier 2): Strategic Patterns — Guidelines
 
-**Week:** 5.5 | **Focus:** Optimization Techniques Mastery  
-**Difficulty:** 🔴 Hard | **Time:** 15-20 hours | **Interview Weight:** 38-57%
+## 📅 Daily Breakdown & Time Allocation
 
----
+**Total Week:** 9-10.5 hours (3 hours per day)
 
-## 1️⃣ WEEK 5.5 MISSION
+| Day | Topic | Time | Focus | Coverage |
+|-----|-------|------|-------|----------|
+| **1** | Difference Array | 3h | Range updates, O(n+k) optimization | 10-15% |
+| **2** | In-Place Replacement | 3h | Space optimization, O(1) extra | 8-12% |
+| **3** | Deque Operations | 3h | Sliding window, O(n) max/min | 5-10% |
+| **Weekend** | Integration & Review | 1-1.5h | Pattern combinations, strategy | — |
 
-Master four optimization techniques that cover **38-57% of advanced array interview problems**.
-
-From foundation (Week 5) → optimization (Week 5.5) → generalization (Week 6).
-
----
-
-## 2️⃣ THE FOUR TECHNIQUES AT A GLANCE
-
-| Technique | Problem | Solution | Complexity | Interview % |
-|-----------|---------|----------|-----------|------------|
-| **Difference Array** | Range updates | Mark boundaries | O(m+n) | 10-15% |
-| **In-Place** | Space constraint | Two-pointer i,j | O(n) time, O(1) space | 8-12% |
-| **Deque** | Window max/min | Monotonic queue | O(n) | 5-10% |
-| **Combinations** | Complex | Chain techniques | Varies | 15-20% |
+**Total:** 9-10.5 hours, 3 critical strategic patterns
 
 ---
 
-## 3️⃣ DAILY BREAKDOWN & TIME ALLOCATION
+## 🎯 Learning Objectives
 
-**Phase 1: Core (Days 1-3)** - 7.5 hours
-- Day 1 Diff Array: 2.5 hrs
-- Day 2 In-Place: 2.5 hrs
-- Day 3 Deque: 2.5 hrs
-
-**Phase 2: Advanced (Days 4-5)** - 5 hours
-- Day 4 Combinations: 2.5 hrs
-- Day 5 Integration: 2.5 hrs
-
-**Phase 3: Mastery (2.5-5 hours)**
-- Problem solving sprint
-- 15+ problems total
-- Interview simulation
+### By End of Week 5.5
+- [ ] Master difference array for range updates (10-15% problems)
+- [ ] Implement in-place replacement O(1) space (8-12% problems)
+- [ ] Solve sliding window max/min with deque O(n) (5-10% problems)
+- [ ] Recognize which Tier 2 pattern fits each problem
+- [ ] Understand when Tier 2 patterns beat alternatives
+- [ ] Solve 80-88% of interview problems (cumulative)
 
 ---
 
-## 4️⃣ LEARNING OBJECTIVES
+## 📚 Core Concepts
 
-### Knowledge (Understanding)
-- [ ] Difference array = inverse of prefix sum
-- [ ] In-place = safe because i > j always
-- [ ] Deque = monotonic for O(1) access
-- [ ] When to combine techniques
-- [ ] Why each technique works
+**Concept 1: Batch Processing with Boundaries**  
+Mark problem boundaries instead of processing all elements. Transform O(n×k) to O(n+k).
 
-### Skills (Can Do)
-- [ ] Code difference array from scratch
-- [ ] Code in-place removal from scratch
-- [ ] Code deque sliding window from scratch
-- [ ] Combine 2+ techniques
-- [ ] Handle all edge cases
+**Concept 2: Two-Pointer Space Optimization**  
+Modify arrays in-place with O(1) extra space. Read ahead, write selectively.
 
-### Application (Where to Use)
-- [ ] Recognize pattern from problem statement
-- [ ] Choose optimal technique(s)
-- [ ] Implement efficiently
-- [ ] Verify with test cases
-- [ ] Discuss trade-offs
+**Concept 3: Monotonic Data Structure**  
+Maintain decreasing/increasing order in deque. Front always contains best element (max/min).
 
 ---
 
-## 5️⃣ PATTERN RECOGNITION FRAMEWORK
+## 🔄 Recommended Learning Path
 
-### Decision Tree
-
-```
-Problem mentions:
-├─ "Update range" OR "add to [L,R]"
-│  └─ Difference Array
-├─ "In-place" OR "O(1) space"
-│  └─ In-Place Two-Pointer
-├─ "Sliding window" OR "window of size k"
-│  └─ Deque Monotonic
-├─ Multiple of above
-│  └─ Combination Approach
-└─ Not sure?
-   └─ Reference Decision Matrix
-```
-
-### Keywords Trigger
-
-**Difference Array:**
-- Range updates, range additions, shifts, batch operations
-
-**In-Place:**
-- Modify in-place, O(1) space, no extra array, remove elements
-
-**Deque:**
-- Sliding window, maximum, minimum, every window
-
-**Combinations:**
-- After updates, then query; filter then analyze; multiple operations
+**Morning (90 min):** Read instructional, trace examples, understand mechanics  
+**Afternoon (60 min):** Answer Socratic questions, solve 3-4 problems, implement from scratch  
+**Evening (30 min):** Review checklist, rate confidence, compare to alternatives
 
 ---
 
-## 6️⃣ COMMON MISTAKES & HOW TO AVOID
+## ⚠️ Common Mistakes to Avoid
 
-| Mistake | Why Wrong | Prevention |
-|---------|-----------|-----------|
-| Diff array size = n | Index out of bounds | Always: size = n+1 |
-| In-place: i ≤ j | Read-write collision | Verify: i > j always |
-| Deque: store values | Can't check window | Store indices instead |
-| Update while query | Wrong results | Query AFTER updates |
-| Forget to reconstruct | Using wrong array | Reconstruct = required step |
-| Heap for window max | O(n log n) not O(n) | Use deque for monotonic |
+**Mistake 1: "Difference array is just another data structure"**  
+Reality: It's an optimization technique transforming O(n×k) to O(n+k) by inverting the problem.
 
----
+**Mistake 2: "In-place only for memory savings"**  
+Reality: Interview gold standard. Shows algorithmic mastery and pointer manipulation skill.
 
-## 7️⃣ INTERVIEW PREPARATION
+**Mistake 3: "Deque is just a queue"**  
+Reality: Double-ended with unique properties. Monotonic deque is specialized pattern.
 
-### 30-Second Explanations
+**Mistake 4: "Can use heap/segment tree instead of deque"**  
+Reality: They work (O(n log n)) but deque is O(n) optimal for this pattern.
 
-**Difference Array:**
-> "For range updates, I use a difference array. Mark start with +val, end+1 with -val. Then reconstruct with prefix sum. Time: O(m+n)."
-
-**In-Place:**
-> "For space optimization, I use two pointers. i scans for valid elements, j marks write position. Since i > j always, no collision. Time: O(n), Space: O(1)."
-
-**Deque:**
-> "For sliding window max, monotonic deque. Maintain indices in decreasing value order. Front is always max. Time: O(n)."
-
-**Combinations:**
-> "This problem combines techniques. I'll apply difference array for updates, reconstruct, then use deque for window queries."
-
-### Code in 5 Minutes
-
-- Difference array template: 5 lines
-- In-place template: 4 lines
-- Deque template: 8 lines
-
-### Solve in 20-25 Minutes
-
-- Easy problems: 15-20 min
-- Medium problems: 25-35 min
-- Hard problems: 40-60 min
+**Mistake 5: "Tier 2 patterns are less important than Tier 1"**  
+Reality: +10-12% coverage. Takes cumulative 80-88%. Many hard interview problems use these.
 
 ---
 
-## 8️⃣ PRACTICE PROGRESSION
+## 🎓 Practice Problems Guide
 
-### Week 5.5 Problem Target: 15+ Total
+### Difference Array (8+ problems)
+1. Range Addition
+2. Hotel Bookings II (count occupied rooms)
+3. Difference Array Queries (range add, point query)
+4. Shift Queries
+5. Conflict Detection (overlapping intervals)
+6. Range Increment
+7. Event Scheduling (mark availability)
+8. 2D Difference Array (rectangle updates on grid)
 
-**By Technique:**
-- Difference Array: 3-4 problems
-- In-Place: 3-4 problems
-- Deque: 3-4 problems
-- Combinations: 2-3 problems
+### In-Place Replacement (8+ problems)
+1. Remove Duplicates from Sorted Array
+2. Remove Element (by value)
+3. Remove Vowels from String
+4. Move Zeroes to End
+5. Duplicate Zeros
+6. Valid Mountain Array (in-place check)
+7. Partition Labels
+8. Shift Zeros (move to end in-place)
 
-**By Difficulty:**
-- Easy: 5 problems (15-20 min each)
-- Medium: 5 problems (25-40 min each)
-- Hard: 5 problems (40-60 min each)
-
-**Recommended LeetCode Problems:**
-1. Range Addition (370)
-2. Remove Element (27)
-3. Sliding Window Maximum (239)
-4. Hotel Bookings II (1109)
-5. Remove Vowels (1119)
-6. And 10 more of your choice
-
----
-
-## 9️⃣ RESOURCES & EXTERNAL LINKS
-
-**Visualization:**
-- LeetCode Playground (for coding)
-- Draw.io (for diagrams)
-- Pen & paper (for tracing)
-
-**Practice:**
-- LeetCode (primary source)
-- HackerRank (alternative)
-- CodeSignal (mock interviews)
-
-**Reference:**
-- [73] Summary (quick lookup)
-- [67-71] Instructional files
-- [75] Q&A with answers
+### Deque Operations (8+ problems)
+1. Sliding Window Maximum
+2. Sliding Window Minimum
+3. First Negative Integer in Every Window
+4. Building a Bigger Window
+5. Maximize Sum of k Elements
+6. Optimal Position for Service Center
+7. Shortest Subarray with Sum at Least K
+8. Min Index Sum of Two Lists (deque variant)
 
 ---
 
-## 🔟 ASSESSMENT & SUCCESS CRITERIA
+## 💼 Interview Preparation
 
-### Knowledge Assessment (Rate 1-5)
+**Tier 2 Coverage:** 80-88% of interview problems (combined with Tier 1 + foundational weeks)
 
-| Concept | Rating |
-|---------|--------|
-| Difference array concept | ___/5 |
-| In-place mechanism | ___/5 |
-| Deque monotonic | ___/5 |
-| Pattern recognition | ___/5 |
-| Technique combination | ___/5 |
+**Interview Strategy:**
+1. Identify problem category (range update? space optimization? sliding window?)
+2. Check if Tier 2 pattern applies
+3. Understand when pattern beats alternatives
+4. Implement cleanly with edge cases
+5. Explain time/space trade-offs
 
-**Target:** 4/5 on all
-
-### Practical Skills (Can You...)
-
-- [ ] Code difference array from scratch in < 5 min
-- [ ] Code in-place from scratch in < 5 min
-- [ ] Code deque from scratch in < 8 min
-- [ ] Combine techniques correctly
-- [ ] Handle all edge cases
-
-### Interview Readiness (Pre-Interview)
-
-- [ ] Explain each technique in 30 sec
-- [ ] Solve easy problems in 15 min
-- [ ] Solve medium problems in 30 min
-- [ ] Recognize which technique(s) apply
-- [ ] Write production-quality code
+**When Tier 2 Matters Most:**
+- Hard problems often combine Tier 1 + Tier 2
+- Space optimization highly valued (O(1) → interview gold)
+- Optimization patterns show deep understanding
+- Real systems use these (booking systems, streaming, trading)
 
 ---
 
-## 1️⃣1️⃣ WEEK 5.5 INTEGRATION POINTS
+## 🔗 Connection to Other Weeks
 
-### With Week 5 (Trees)
-- Trees used prefix sums
-- Week 5.5 uses inverse (difference array)
-- Same thinking, different angle
-
-### With Week 6 (Graphs)
-- Difference array → edge weight updates
-- In-place → vertex coloring
-- Deque → BFS optimization
-
-### With Interviews
-- Week 5.5 techniques appear in 38-57% of advanced problems
-- Essential for Google, Meta, Microsoft
-- Tests optimization mindset
+**Week 4.5 (Tier 1):** Hash (70%), Monotonic (20%), Merge (30%), Partition (15%), Kadane (10%)  
+**Week 5 (Trees):** Hierarchical structures, ordered access, priority queues  
+**Week 5.5 (Tier 2):** Range updates (10-15%), space optimization (8-12%), sliding window (5-10%)  
+**Week 6+ (Graphs, etc.):** Build on these patterns for complex algorithms
 
 ---
 
-## 1️⃣2️⃣ WEEK 5.5 TO WEEK 6 TRANSITION
+## ❓ Frequently Asked Questions
 
-### Before Moving to Week 6, Verify:
+**Q: Do I need to master all 3 Tier 2 patterns?**
+A: Yes. Each covers 5-15% of problems. Together 80-88%.
 
-✅ **Readiness Checklist:**
-- [ ] Understand all 4 techniques conceptually
-- [ ] Confidence 4/5 on Days 1-3 (core techniques)
-- [ ] Confidence 3/5 on Day 4 (combinations)
-- [ ] Solved 15+ problems across all techniques
-- [ ] Can recognize technique from problem statement
-- [ ] Can code from scratch in 5 minutes
-- [ ] Can explain in 30 seconds
+**Q: Can I skip Tier 2 and go to Week 6?**
+A: Possible, but many hard problems use these. Recommended to do Tier 2.
 
-✅ **Performance Targets:**
-- [ ] Easy problems: 90% success rate
-- [ ] Medium problems: 70% success rate
-- [ ] Hard problems: 50% success rate
-- [ ] Average time: within target range
+**Q: How long does Tier 2 take?**
+A: 9-10.5 hours (3 hours per day). Faster than full weeks (12-14 hours).
 
-✅ **Confidence Levels:**
-- [ ] Overall confidence: 4/5
-- [ ] Ready for advanced problems: YES
+**Q: Is in-place replacement really that important?**
+A: Yes. Interviews heavily prefer O(1) space. Critical for embedded/real-time systems.
 
-### If Not Ready:
-1. Identify weak technique(s)
-2. Review specific instructional file
-3. Solve 5+ problems on weak technique
-4. Return to readiness checklist
+**Q: When do I use difference array vs segment tree?**
+A: Difference array: batch range updates, one reconstruction. Segment tree: mixed updates + queries.
 
-### If Ready:
-→ Proceed to Week 6 (Graph Fundamentals)
+**Q: How do I extend deque to 2D sliding window?**
+A: Use 2D deque (nested deques or custom structure). More complex but same principle.
 
 ---
 
-## 📝 FINAL SUMMARY
+## ✅ Before Proceeding to Week 6
 
-| Dimension | Week 5.5 |
-|-----------|----------|
-| **Topics** | 4 optimization techniques |
-| **Time** | 15-20 hours |
-| **Problems** | 15+ required |
-| **Difficulty** | Hard |
-| **Interview %** | 38-57% of advanced arrays |
-| **Key Skill** | Pattern recognition |
-| **Next Step** | Week 6 (Graphs) |
-
----
-
-## ✅ SUCCESS DEFINITION
-
-**You've mastered Week 5.5 when:**
-
-1. **Knowledge:** Can explain all 4 techniques in detail
-2. **Skills:** Can code all 4 from scratch quickly
-3. **Application:** Can recognize which technique(s) apply
-4. **Proficiency:** Can solve medium/hard problems consistently
-5. **Speed:** Can solve problems within time limits
-6. **Confidence:** Feel 4/5 confidence on each technique
-
----
-
-**Week 5.5 Enhanced Guidelines Complete**  
-**Status:** Ready for learning  
-**Goal:** Master optimization patterns  
-**Outcome:** 38-57% interview coverage  
-
-**Let's optimize!** 🚀
+- [ ] Rate 4/5 or higher on all 3 days
+- [ ] Can recognize pattern instantly from problem statement
+- [ ] Can implement without looking at notes
+- [ ] Understand when each pattern is optimal
+- [ ] Understand time/space trade-offs
 

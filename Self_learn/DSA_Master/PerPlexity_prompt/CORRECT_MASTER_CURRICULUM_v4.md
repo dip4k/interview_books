@@ -248,8 +248,6 @@
     - One-line essence
     - Mnemonic devices
     - Geometric/visual cue
-    - Cognitive lenses (5 perspectives)
-```
 
 ---
 
@@ -264,6 +262,16 @@
 | **Design Trade-off** | Memory locality vs flexibility, recursion vs iteration |
 | **AI/ML Analogy** | DP ↔ Bellman optimization, search ↔ inference |
 | **Historical Context** | Who designed it? What system first used it? |
+
+> **Primary Objective:**
+> Generate the full instructional content for this topic following the 11-Section Framework outlined above + 5 Cognitive Lenses + supplementry outcomes mentioned below.
+> **Secondary Objectives (Deep Dive):**
+> Beyond the standard framework, please prioritize the following:
+> 1. **Conceptual Gaps:** Identify and explain advanced concepts or "blind spots" that are critical for mastery.
+> 2. **Explicit Detail:** Provide the most comprehensive information available.
+> 3. **Supplementary Data:** Include add-ons (visualizations, mental models) to improve intuition.
+> 4. **External References:** List relevant web resources and links.
+```
 
 ---
 
