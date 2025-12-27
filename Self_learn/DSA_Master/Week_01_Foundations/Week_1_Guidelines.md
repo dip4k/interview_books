@@ -1,330 +1,324 @@
-# Week 1: Fundamentals & Array Basics - Guidelines
+# Week 1: Foundations - Guidelines
 
-**Week Focus:** Foundation building with arrays, strings, and basic problem-solving  
-**Total Time Investment:** 8-10 hours (learning + practice)  
-**Difficulty Level:** 🟢 Easy  
-**Prerequisites:** None (complete beginner-friendly)
-
----
-
-## 📅 Daily Breakdown & Time Allocation
-
-| Day | Topic | Time | Key Outcomes |
-|-----|-------|------|--------------|
-| **1** | Array Fundamentals | 90 min | Indexing, iteration, common operations |
-| **2** | String Basics | 85 min | String manipulation, comparison, patterns |
-| **3** | Basic Array Operations | 80 min | Insert, delete, search, modify |
-| **4** | Basic String Operations | 75 min | Substring, split, merge, case handling |
-| **5** | Integration & Practice | 70 min | Combine arrays and strings, solve problems |
-
-**Total Core Learning:** ~400 minutes (6.7 hours)  
-**Practice & Consolidation:** ~3 hours  
+**Week:** 1 | **Week Title:** Foundations  
+**Goal:** Understand how computers work and measure algorithm efficiency  
+**Duration:** 5 days (90-120 min each) + 3-5 hours practice  
+**Difficulty:** 🟡 Medium (Easy concepts, Medium depth)
 
 ---
 
-## 🎯 Week 1 Learning Objectives
+## 1️⃣ Daily Breakdown & Time Allocation
 
-### By Week End, You Should:
-
-**Knowledge:**
-- [ ] Understand array indexing (0-based)
-- [ ] Know array iteration patterns
-- [ ] Understand string immutability
-- [ ] Know string methods and operations
-- [ ] Understand time/space complexity (basic)
-
-**Skills:**
-- [ ] Access array elements by index
-- [ ] Iterate through arrays (for, while)
-- [ ] Manipulate strings (slice, concat, case)
-- [ ] Write basic loops and conditions
-- [ ] Handle array and string edge cases
-
-**Application:**
-- [ ] Solve simple array problems (searching, counting)
-- [ ] Manipulate strings (reversal, palindrome check)
-- [ ] Combine arrays and strings
-- [ ] Write readable code with comments
+| Day | Topic | Core Time | Practice | Total |
+|-----|-------|-----------|----------|-------|
+| **1** | RAM Model & Pointers | 90 min | 60 min | 2.5 hrs |
+| **2** | Asymptotic Analysis | 100 min | 60 min | 2.5 hrs |
+| **3** | Space Complexity | 90 min | 45 min | 2.25 hrs |
+| **4** | Recursion I | 100 min | 75 min | 3 hrs |
+| **5** | Recursion II | 120 min | 90 min | 3.5 hrs |
+| **Integration** | Weekly synthesis | - | 120 min | 2 hrs |
+| **TOTAL** | **Week 1** | **~500 min** | **~450 min** | **~15 hrs** |
 
 ---
 
-## 📚 Core Concepts Overview
+## 2️⃣ Learning Objectives
 
-### Arrays
-```
-Declaration: arr = [1, 2, 3, 4, 5]
-Indexing: arr[0] = 1, arr[-1] = 5 (Python)
-Iteration: for i in range(len(arr)): use arr[i]
-Time: Access O(1), Search O(n), Insert/Delete O(n)
-Space: O(n) for array of size n
-```
+### Knowledge (Understand)
+- [ ] Explain how RAM model addresses memory
+- [ ] Define Big-O, Omega, Theta notation correctly
+- [ ] Distinguish time complexity from space complexity
+- [ ] Identify base cases and recursive calls
+- [ ] Analyze recurrence relations
 
-### Strings
-```
-Declaration: s = "hello"
-Indexing: s[0] = 'h', s[-1] = 'o'
-Iteration: for char in s: use char
-Immutable: Can't modify, create new string
-Time: Access O(1), Search O(n), Operations O(n)
-Space: O(n) for string of length n
-```
+### Skills (Apply)
+- [ ] Count operations to derive time complexity
+- [ ] Identify space usage in algorithms
+- [ ] Trace recursive algorithms by hand
+- [ ] Convert non-tail recursion to tail-recursive form
+- [ ] Apply memoization to optimize recursive solutions
 
----
-
-## 🔄 Recommended Learning Path
-
-**Best Order to Study:**
-
-1. **Day 1:** Array Fundamentals
-   - Understand indexing, basic operations
-   - Build mental model of arrays
-   - Practice accessing elements
-
-2. **Day 2:** String Basics
-   - Learn string operations
-   - Understand immutability
-   - Practice string methods
-
-3. **Day 3:** Array Operations Deep Dive
-   - Insert, delete, search
-   - Common patterns (sum, min/max, count)
-   - Build practical skills
-
-4. **Day 4:** String Operations Deep Dive
-   - String manipulation patterns
-   - Common transformations
-   - Real-world string problems
-
-5. **Day 5:** Integration
-   - Combine arrays and strings
-   - Solve mixed problems
-   - Consolidate understanding
-
-**Why This Order?**
-- Arrays are more intuitive (start there)
-- Strings build on array concepts
-- Deep dive after basics solidified
-- Integration requires both foundational
+### Application (Create/Design)
+- [ ] Choose between arrays, lists based on operations
+- [ ] Predict algorithm performance without running
+- [ ] Design recursive solutions to problems
+- [ ] Optimize naive recursive algorithms
+- [ ] Reason about memory constraints
 
 ---
 
-## ⚠️ Common Mistakes to Avoid
+## 3️⃣ Core Concepts Overview
 
-### Array-Related
+**Concept 1: RAM Model**
+- Memory is linear, addressable (0, 1, 2, ...)
+- Variables have addresses; pointers store addresses
+- Dereferencing (*ptr) follows the address
+- Pointer arithmetic scales by sizeof(element_type)
+- Cache locality affects real-world performance
+
+**Concept 2: Asymptotic Analysis**
+- Big-O measures worst-case growth rate
+- Constants and lower-order terms ignored
+- Hierarchy: O(1) < O(log n) < O(n) < O(n²) < O(2^n)
+- Algorithm choice depends on input size
+
+**Concept 3: Space Complexity**
+- Measures extra memory beyond input
+- Stack space from recursion depth
+- Heap allocations from dynamic memory
+- Trade space for time (indexing, memoization)
+
+**Concept 4: Recursion**
+- Function calls itself on smaller problem
+- Must have base case (stopping condition)
+- Stack frames accumulate → call stack depth = space
+- Time = work per call × number of calls
+
+**Concept 5: Advanced Recursion**
+- Tail recursion: optimizes to O(1) space if compiler supports
+- Memoization: caching eliminates recomputation
+- Mutual recursion: functions call each other (parsing)
+
+---
+
+## 4️⃣ Recommended Learning Path
+
+### Suggested Order (Same as Days 1-5)
+1. Start with **RAM Model** (Day 1) — foundation for all complexity analysis
+2. Then **Asymptotic Analysis** (Day 2) — how to measure algorithms
+3. Then **Space Complexity** (Day 3) — measures memory like Big-O measures time
+4. Then **Recursion I** (Day 4) — applying complexity analysis to recursive problems
+5. Finally **Recursion II** (Day 5) — optimizing recursive solutions
+
+**Reasoning:**
+- Days 1-3 are conceptual foundations (how computers work)
+- Days 4-5 apply these concepts (recursion examples)
+- Each day builds on previous knowledge
+
+---
+
+## 5️⃣ Common Mistakes to Avoid
 
 | Mistake | Why It's Wrong | Fix |
-|---------|----------------|-----|
-| **Off-by-one errors** | Array indices 0 to n-1, not 1 to n | Use 0-based indexing consistently |
-| **Forgetting boundaries** | Accessing arr[n] causes error | Always check: 0 ≤ index < len(arr) |
-| **Modifying while iterating** | Can skip/double elements | Create new array or use safe iteration |
-| **Confusing len(arr) with last index** | len([1,2,3]) = 3, but index is 2 | Remember: last_index = len(arr) - 1 |
-
-### String-Related
-
-| Mistake | Why It's Wrong | Fix |
-|---------|----------------|-----|
-| **Trying to modify strings** | Strings are immutable | Create new string (concatenate) |
-| **Index out of bounds** | "hello"[5] doesn't exist | Check: index < len(string) |
-| **Case sensitivity** | "A" ≠ "a" in comparison | Use .lower() or .upper() if needed |
-| **Empty string handling** | Forgot edge case | Always check: if s or if len(s) > 0 |
+|---------|-----------------|-----|
+| Ignoring constants | For n=100, 1000n might beat 0.5n² | Count operations precisely initially |
+| Confusing Big-O with actual time | O(n) doesn't mean "fast" | Remember: constants matter in practice |
+| Assuming O(1) is always instant | Cache misses make it slow | Reason about cache locality |
+| Forgetting recursion has space cost | Stack depth = O(n) is huge | Always count call stack depth |
+| Trying to memoize everything | Caching costs space | Only memoize expensive subproblems |
+| Assuming tail-call optimization exists | Python and Java don't do it | Verify with your language |
+| Not considering base cases | Infinite recursion → crash | Always define base case first |
 
 ---
 
-## 🎓 Practice Problems Guide
+## 6️⃣ Practice Problems Guide
 
-### Array Problems
+### Level 1: Foundational (Easy)
+- [ ] Implement factorial iteratively and recursively
+- [ ] Count operations in simple loops (O(n), O(n²))
+- [ ] Calculate pointer addresses given memory layout
+- [ ] Identify Big-O of simple functions (Best/Avg/Worst)
+- [ ] Trace array sum recursion by hand
 
-**Easy (Start Here):**
-- Find maximum element in array
-- Count occurrences of element
-- Reverse an array
-- Remove duplicates from sorted array
-- Time: 15-20 min per problem
+**Resources:**
+- LeetCode: Easy tag, "Recursion" problems
+- HackerRank: Basic recursion practice
+- Project Euler: Math-heavy but good for recursion
 
-**Medium (After Easy Mastered):**
-- Rotate array
-- Merge sorted arrays
-- Check if array is sorted
-- Time: 20-30 min per problem
+### Level 2: Intermediate (Medium)
+- [ ] Analyze binary search recurrence (T(n) = T(n/2) + O(1))
+- [ ] Convert factorial to tail-recursive form
+- [ ] Apply memoization to Fibonacci
+- [ ] Trace merge sort, analyze O(n log n)
+- [ ] Implement power(x, n) recursively
 
-**Recommended Sources:**
-- LeetCode: Easy Array problems
-- HackerRank: Array Manipulation
-- GeeksforGeeks: Array tutorials
+**Resources:**
+- LeetCode Medium: "Recursion", "Memoization"
+- Algorithm textbooks (CLRS, Algo Design Manual)
+- YouTube: Abdul Bari, MIT OpenCourseWare lectures
 
-### String Problems
+### Level 3: Advanced (Hard)
+- [ ] Analyze complex recurrence relations (Master Theorem)
+- [ ] Optimize mutual recursion (parsing)
+- [ ] Implement backtracking with pruning
+- [ ] Recognize optimization opportunities
+- [ ] Debug stack overflow in recursion
 
-**Easy:**
-- Reverse a string
-- Check if palindrome
-- Convert case (upper/lower)
-- Repeat string
-- Time: 15-20 min per problem
-
-**Medium:**
-- Find longest substring without repeating
-- Check if anagram
-- String compression
-- Time: 25-35 min per problem
-
----
-
-## 💼 Interview Preparation
-
-### How Week 1 Appears in Interviews
-
-**Array Questions:**
-- "Reverse an array in-place"
-- "Find the maximum element"
-- "Remove duplicates"
-- "Rotate an array"
-
-**String Questions:**
-- "Check if string is palindrome"
-- "Reverse a string"
-- "Find longest substring without repeating characters"
-- "Check if two strings are anagrams"
-
-**Mixed Questions:**
-- "Valid parentheses in string"
-- "Two sum in array"
-
-### Interview Tips
-1. **Ask clarifications:** "Are there duplicates? Negative numbers?"
-2. **State assumptions:** "I'll assume sorted array"
-3. **Test edge cases:** Empty array, single element, duplicates
-4. **Explain approach before coding:** "First I'll iterate..."
-5. **Code cleanly:** Use descriptive variable names
+**Resources:**
+- CLRS (Introduction to Algorithms)
+- LeetCode Hard tag
+- Codeforces problems tagged "Recursion"
 
 ---
 
-## 🔗 Resources & References
+## 7️⃣ Interview Preparation
 
-### Online Platforms
-- **LeetCode:** https://leetcode.com (Easy problems)
-- **HackerRank:** https://www.hackerrank.com/domains/tutorials/10-days-of-javascript
-- **GeeksforGeeks:** https://www.geeksforgeeks.org (Array/String tutorials)
-- **Khan Academy:** https://www.khanacademy.org (CS basics)
+### Common Interview Questions
+
+**On RAM Model & Pointers:**
+- "Explain what a pointer is and how dereferencing works"
+- "Why does array access beat linked list access?" (cache locality)
+- "How would you implement a memory pool?"
+
+**On Complexity Analysis:**
+- "What's the time and space complexity of [algorithm]?"
+- "How would you optimize this to O(n) time?"
+- "Can you trade space for time here?"
+
+**On Recursion:**
+- "Can you solve this recursively?"
+- "What's the recurrence relation? Solve it."
+- "Why might recursion fail here? How would you fix it?"
+- "How many times is this subproblem computed?" (optimization)
+
+**Example Interview Problem:**
+```
+Q: Implement power(x, n) where n can be negative.
+   Optimize for large n.
+
+Analysis:
+- Naive: power(x, n) = x * power(x, n-1) → O(n) time
+- Optimized: power(x, n) = power(x, n/2) * power(x, n/2) → O(log n) time
+- Handle negative: 1/power(x, -n)
+- Handle memoization: store previously computed powers
+```
+
+---
+
+## 8️⃣ Resources & References
+
+### Books
+- **"Introduction to Algorithms" (CLRS):** Chapters 1-3 (complexity), Chapter 4 (recurrence)
+- **"Algorithm Design Manual" (Skiena):** Chapters 2 (analysis), 5 (recursion)
+
+### Online Courses
+- **MIT 6.006 (Introduction to Algorithms):** Lectures on complexity, recursion
+- **Coursera Data Structures & Algorithms (Levin):** Foundations part
+- **Abdul Bari (YouTube):** Asymptotic analysis, recursion lectures
+
+### Practice Platforms
+- **LeetCode:** Filter by "Recursion", "Memoization"
+- **HackerRank:** Recursion tutorial + practice
+- **Project Euler:** Math problems requiring recursion
 
 ### Visualization Tools
-- **VisuAlgo:** https://www.cs.usfca.edu/~galles/visualization/ (Algorithm visualization)
-- **Python Tutor:** https://pythontutor.com (Step-by-step code execution)
-
-### Recommended Readings
-- "Introduction to Algorithms" - CLRS (Chapter 1-2)
-- "Cracking the Coding Interview" - McDowell (Chapter 1)
+- **VisuAlgo.net:** Algorithm visualization (complexity examples)
+- **Recursion Visualizer:** Step through recursive calls
+- **Big-O Cheat Sheet:** https://www.bigocheatsheet.com/
 
 ---
 
-## ✅ Assessment & Success Criteria
+## 9️⃣ Assessment & Success Criteria
 
-### Knowledge Check
-Answer "Yes" to these:
-- [ ] I understand 0-based indexing
-- [ ] I can iterate through arrays
-- [ ] I understand string immutability
-- [ ] I know basic string methods
-- [ ] I can trace code by hand
+### Knowledge Check (Self-Assessment)
 
-### Practical Skills
-Can you:
-- [ ] Write a function to find max element
-- [ ] Reverse a string manually
-- [ ] Count occurrences in array
-- [ ] Check if string is palindrome
-- [ ] Handle empty array/string cases
+Rate yourself 1-5 on each:
 
-### Confidence Targets
-| Skill | Target |
-|-------|--------|
-| Array Indexing | 5/5 |
-| Array Iteration | 5/5 |
-| String Operations | 4/5 |
-| Basic Problem-Solving | 3-4/5 |
-| Overall Week 1 | 4/5 |
+**Competency** | **Confidence** |
+|---|---|
+| Explain RAM model and pointers | ___ / 5 |
+| Derive Big-O from algorithm code | ___ / 5 |
+| Analyze space complexity | ___ / 5 |
+| Write recursive solutions | ___ / 5 |
+| Optimize recursion (tail, memoization) | ___ / 5 |
+
+**Target:** 4/5 on all before moving to Week 2
+
+### Practical Assessment
+
+- [ ] Can trace pointer arithmetic for array indexing
+- [ ] Can count operations and derive O(n²) from code
+- [ ] Can identify call stack depth for recursion
+- [ ] Can implement tail-recursive factorial
+- [ ] Can add memoization to slow recursive function
 
 ---
 
-## 📊 Connection to Future Weeks
+## 🔟 Connection to Future Weeks
 
-### Week 2: Foundation for Data Structures
-```
-Week 1 Arrays/Strings
-    ↓
-Week 2 Use arrays to implement: Stacks, Queues, HashMaps
-    ↓
-Understanding array access/operations essential
-```
+**Week 2 (Linear Structures):** Apply complexity analysis to arrays, lists, stacks, queues
+- Big-O analysis tells us arrays are O(1) access, lists are O(n) access
+- Recursion appears in linked list traversal
 
-### Week 3: Foundation for Sorting
-```
-Week 1 Array basics
-    ↓
-Week 3 Sorting algorithms work on arrays
-    ↓
-Must be comfortable with iteration and swapping
-```
+**Week 3 (Sorting & Hashing):** Recursion and complexity essential
+- Merge sort: recursive divide-and-conquer
+- Quicksort: recursive partitioning
+- Analyzing O(n log n) complexity
 
-### Week 4+: Advanced Techniques
-```
-Weeks 1-2 Fundamentals
-    ↓
-Week 4 Two Pointers, Sliding Window (on arrays/strings)
-    ↓
-All assume comfort with basic array/string operations
-```
+**Week 4 (Problem-Solving Patterns):** Recursion in patterns
+- Two pointers, sliding window often implemented recursively
+- Cycle detection uses recursion (DFS)
+
+**Week 4.5+ (TIER 1):** Memoization heavily used
+- Hash Map problems: memoize lookups
+- Dynamic programming: recursive + memoization
 
 ---
 
-## ❓ Frequently Asked Questions
+## 1️⃣1️⃣ Frequently Asked Questions
 
-### Q1: Why start with arrays and not linked lists?
-**A:** Arrays are more intuitive (direct indexing) and form basis for understanding data structures. Linked lists require understanding pointers (Week 2).
+**Q: Why do I need to understand RAM model? Can't I just use Big-O?**
+A: Big-O is incomplete. Cache misses, pointer dereferences, and memory allocation affect real performance. Understanding RAM model explains *why* Big-O matters.
 
-### Q2: Is string immutability important for interviews?
-**A:** Yes! Affects approach. If immutable, create new string instead of modifying. Common follow-up: "How would you do this efficiently?"
+**Q: Will my language optimize tail recursion?**
+A: Scheme: Yes (guaranteed). Java, C++: Sometimes (depends on flags). Python: No (by design). Check your language's documentation.
 
-### Q3: Why practice so many array problems?
-**A:** Arrays are foundational. Mastering arrays makes Weeks 2-5 much easier. Pattern recognition develops through repetition.
+**Q: Isn't memoization just caching? Why the fancy name?**
+A: Yes, they're the same. "Memoization" emphasizes caching function results in dynamic programming; "caching" is broader (cache hardware, software caches, etc.).
 
-### Q4: What if I find this too easy?
-**A:** That's great! Move to Week 2 or try harder LeetCode problems (Medium level). Don't skip fundamentals though - understanding is critical.
+**Q: When should I use recursion vs iteration?**
+A: Recursion shines for tree/graph problems and divide-and-conquer. Use iteration for simple loops. If recursion gets deep (n > 10,000), convert to iteration.
 
-### Q5: How much time should I spend on practice?
-**A:** Rule of thumb: 30% learning, 70% practice. Minimum 2-3 hours practice per day.
-
----
-
-## 🎯 Before Moving to Week 2
-
-**Checklist:**
-- [ ] Complete all 5 days of learning material
-- [ ] Solve at least 5 easy array problems
-- [ ] Solve at least 5 easy string problems
-- [ ] Can trace code by hand confidently
-- [ ] Feel comfortable with edge cases
-- [ ] Confident: 4/5 or higher
-
-**If not ready:**
-- Review weak areas
-- Solve 5+ more practice problems
-- Don't rush to Week 2
+**Q: How do I know if my algorithm is O(n²)?**
+A: Count nested loops. Two loops over n = O(n²). One loop over n in loop over n = O(n²). One loop over n, one over 100 = O(n). Constants don't matter for Big-O.
 
 ---
 
-## 📝 Week 1 Quick Summary
+## 1️⃣2️⃣ Before Moving to Week 2
 
-| Concept | Know It | Do It |
-|---------|---------|-------|
-| **Array indexing** | O(1) access | arr[i] = value |
-| **Array iteration** | O(n) time | for i in range(len) |
-| **String immutability** | Can't modify | Create new string |
-| **String methods** | Many available | s.upper(), s.split() |
-| **Time complexity** | O(n) typical | Linear scan arrays |
+### Checklist (Must Complete)
+- [ ] Completed all 5 daily instructional files
+- [ ] Understand RAM model (pointers, dereferencing, cache)
+- [ ] Confidently derive Big-O from code
+- [ ] Know what O(1), O(n), O(n²), O(2^n) mean in practice
+- [ ] Can write and trace recursive algorithms
+- [ ] Understand tail recursion and memoization
+
+### Recommended Review
+- [ ] Revisit Day 1 if you don't understand pointers
+- [ ] Revisit Day 2 if Big-O notation feels confusing
+- [ ] Revisit Days 4-5 if recursion is shaky
+- [ ] Practice 5-10 recursion problems before moving on
+
+### Red Flags (Seek Help)
+- ❌ "I don't understand what a pointer is"
+- ❌ "I can't derive Big-O from code"
+- ❌ "Recursion always confuses me"
+- ❌ "I don't see why space complexity matters"
 
 ---
 
-**Status:** Week 1 Ready for Study ✓  
-**Expected Completion:** 1 week of consistent study  
-**Success Rate:** 95%+ if you practice regularly  
+## 1️⃣3️⃣ Week 1 Quick Summary Table
+
+| Topic | Key Insight | Complexity Formula |
+|-------|-------------|-------------------|
+| RAM | Memory is addressable; pointers store addresses | Access: O(1) |
+| Big-O | Measures growth rate; constants irrelevant | Compare O(n) vs O(n²) |
+| Space | Stack grows with recursion; heap with allocation | Depth O(n), space O(n) |
+| Recursion | Base case + recursive case; trust the recursion | T(n) = T(n-1) + O(1) |
+| Optimization | Tail recursion → O(1) space; memoization → less recomputation | 2^n → n with memo |
+
+---
+
+## 1️⃣4️⃣ Status & Next Steps
+
+**Week 1 Status:** ✅ COMPLETE
+
+**What You've Learned:**
+- Foundational concepts: RAM, Big-O, space, recursion
+- Practical optimization techniques
+- How to analyze algorithms theoretically and practically
+
+**Next:** Week 2 (Linear Structures) applies these foundations to arrays, lists, stacks, queues, and binary search.
+
+**Action:** Choose 5-10 practice problems above, complete them, then move to Week 2.
 

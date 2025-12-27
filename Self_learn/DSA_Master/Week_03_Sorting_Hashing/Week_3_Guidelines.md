@@ -1,336 +1,234 @@
-# Week 3: Sorting & Search Fundamentals - Guidelines
-
-**Week Focus:** Master sorting algorithms, search techniques, and complexity analysis  
-**Total Time Investment:** 10-12 hours (learning + practice)  
-**Difficulty Level:** 🟡 Medium  
-**Prerequisites:** Week 1-2 (Arrays, data structures)
-
----
+# Week 3: Sorting & Hashing — Guidelines
 
 ## 📅 Daily Breakdown & Time Allocation
 
-| Day | Topic | Time | Key Outcomes |
-|-----|-------|------|--------------|
-| **1** | Sorting Fundamentals & Bubble/Selection Sort | 95 min | Comparison-based sorting, O(n²) algorithms |
-| **2** | Merge Sort & Quick Sort | 100 min | Divide-and-conquer, O(n log n), stability |
-| **3** | Heap Sort & Counting/Radix Sort | 90 min | Heap-based, non-comparison sorts |
-| **4** | Linear Search & Binary Search Intro | 85 min | Search algorithms, time complexity |
-| **5** | Sorting Integration & Problem-Solving | 80 min | Choose right sort, optimize problems |
+**Total Week:** 12-14 hours (2.5-2.8 hours per day)
 
-**Total Core Learning:** ~450 minutes (7.5 hours)  
-**Practice & Consolidation:** ~4-5 hours  
+| Day | Topic | Time | Core Concepts | Difficulty |
+|-----|-------|------|---------------|------------|
+| **1** | Elementary Sorts | 2.5h | Bubble, Insertion, Selection; O(n²) limits | Medium |
+| **2** | Merge & Quick Sort | 2.5h | Divide-conquer, guaranteed vs average O(n log n) | Hard |
+| **3** | Heap Sort | 2.5h | Heap property, in-place O(n log n), guaranteed | Hard |
+| **4** | Hash Tables I | 2.5h | Hash function, collisions, chaining, O(1) average | Hard |
+| **5** | Hash Tables II | 2.5h | Open addressing, rehashing, load factor | Hard |
+| **Weekend** | Integration | 2h | Synthesis, decision trees | — |
 
 ---
 
-## 🎯 Week 3 Learning Objectives
+## 🎯 Learning Objectives
 
-### By Week End, You Should:
+### By End of Day 1 (Elementary Sorts)
+- [ ] Understand bubble, insertion, selection sort mechanics
+- [ ] Know O(n²) limits and when acceptable (n < 10,000)
+- [ ] Understand stability concept
+- [ ] Know insertion sort is adaptive (O(n) on nearly-sorted)
 
-**Knowledge:**
-- [ ] Understand sorting comparison
-- [ ] Know O(n²) vs O(n log n) sorting
-- [ ] Understand stability in sorting
-- [ ] Know when to use each algorithm
-- [ ] Understand search complexity
+### By End of Day 2 (Merge & Quick Sort)
+- [ ] Understand divide-and-conquer on sorted data
+- [ ] Know merge sort: guaranteed O(n log n), stable, needs O(n) space
+- [ ] Know quick sort: average O(n log n), O(1) space, faster in practice
+- [ ] Understand pivot selection impacts performance
 
-**Skills:**
-- [ ] Implement Bubble, Selection, Insertion Sort
-- [ ] Implement Merge Sort, Quick Sort
-- [ ] Implement Heap Sort
-- [ ] Implement Binary Search
-- [ ] Analyze algorithm efficiency
+### By End of Day 3 (Heap Sort)
+- [ ] Understand binary heap property
+- [ ] Know heap sort: guaranteed O(n log n), O(1) space
+- [ ] Understand heapify operation
+- [ ] Know heap applications (priority queues, selection)
 
-**Application:**
-- [ ] Choose optimal sort for constraint
-- [ ] Optimize sorting problems
-- [ ] Use binary search efficiently
-- [ ] Combine with data structures
-- [ ] Solve complex sorting problems
+### By End of Day 4 (Hash Tables I)
+- [ ] Understand hash function concept
+- [ ] Know O(1) average for search/insert/delete
+- [ ] Understand collision basics
+- [ ] Know chaining approach
+
+### By End of Day 5 (Hash Tables II)
+- [ ] Understand chaining vs open addressing
+- [ ] Know load factor and rehashing
+- [ ] Understand primary clustering
+- [ ] Know practical trade-offs
 
 ---
 
 ## 📚 Core Concepts Overview
 
-### Sorting Algorithms Comparison
+### Concept 1: Sorting Trade-offs
+**Time-Space:** Merge sort O(n) space, quick sort O(1) space  
+**Stability:** Important for multi-key sort  
+**Adaptivity:** Insertion sort exploits nearly-sorted data
 
-| Algorithm | Time Best | Time Avg | Time Worst | Space | Stable |
-|-----------|-----------|----------|-----------|-------|--------|
-| **Bubble** | O(n) | O(n²) | O(n²) | O(1) | Yes |
-| **Selection** | O(n²) | O(n²) | O(n²) | O(1) | No |
-| **Insertion** | O(n) | O(n²) | O(n²) | O(1) | Yes |
-| **Merge** | O(n log n) | O(n log n) | O(n log n) | O(n) | Yes |
-| **Quick** | O(n log n) | O(n log n) | O(n²) | O(log n) | No |
-| **Heap** | O(n log n) | O(n log n) | O(n log n) | O(1) | No |
+### Concept 2: Divide-and-Conquer
+**Principle:** Divide problem, solve subproblems, combine  
+**Recurrence:** T(n) = a×T(n/b) + f(n)  
+**Master Theorem:** Analyze growth rate
 
-### Stability
-```
-Stable: Relative order of equal elements preserved
-Example: [(1,a), (2,b), (1,c)] after sort → [(1,a), (1,c), (2,b)]
-Merge Sort: Stable
-Quick Sort: Unstable (depends on partition)
-```
+### Concept 3: Hashing Fundamentals
+**Hash Function:** Key → index via arithmetic  
+**Collision Resolution:** Chaining or probing  
+**Load Factor:** n/m; keep < 0.75
+
+### Concept 4: Complexity Trade-offs
+**Elementary:** Simple O(n²)  
+**Advanced:** Complex O(n log n)  
+**Hash:** Average O(1) vs worst O(n)
 
 ---
 
 ## 🔄 Recommended Learning Path
 
-**Best Order to Study:**
+**Morning (90 min):**
+1. Read daily instructional file
+2. Trace examples by hand
+3. Understand key mechanics
 
-1. **Day 1:** Sorting Fundamentals
-   - Understand comparison-based sorting
-   - Simple O(n²) algorithms (Bubble, Selection)
-   - How sorting works conceptually
+**Afternoon (60 min):**
+1. Answer Socratic questions
+2. Solve practice problems
+3. Implement algorithms
 
-2. **Day 2:** Efficient Sorting
-   - Merge sort (divide-and-conquer)
-   - Quick sort (average O(n log n))
-   - Why faster than O(n²)
-
-3. **Day 3:** Specialized Sorts
-   - Heap sort (uses heap structure)
-   - Non-comparison sorts (Counting, Radix)
-   - When to use each type
-
-4. **Day 4:** Search Algorithms
-   - Linear search (O(n))
-   - Binary search (O(log n))
-   - Binary search variants
-
-5. **Day 5:** Integration
-   - Optimize sorting problems
-   - Combine sort with other techniques
-   - Choose right algorithm
-
-**Why This Order?**
-- Simple sorts build intuition
-- Efficient sorts teach divide-and-conquer
-- Specialized sorts show flexibility
-- Search builds on sorted data
-- Integration uses everything
+**Evening (30 min):**
+1. Check checklist
+2. Rate confidence
+3. Plan next day
 
 ---
 
 ## ⚠️ Common Mistakes to Avoid
 
-### Sorting-Related
+**Mistake 1: "Quick sort is always O(n log n)"**
+Reality: Adversarial pivot selection → O(n²). Use median-of-three or intro-sort.
 
-| Mistake | Fix |
-|---------|-----|
-| **Using O(n²) when O(n log n) available** | Choose Merge/Quick/Heap Sort |
-| **Not handling duplicate elements** | Test with duplicates, ensure stability if needed |
-| **Quicksort worst case O(n²)** | Use median-of-3 or random pivot |
-| **Forgetting merge sort uses O(n) space** | Trade-off: stable sort needs space |
-| **Confusing in-place requirement** | Merge sort not in-place, others are |
+**Mistake 2: "Hash tables are always O(1)"**
+Reality: O(1) average with good hash function. Worst-case O(n).
 
-### Search-Related
+**Mistake 3: "Merge sort is slower than quick sort"**
+Reality: Merge faster for external sorting, linked lists, stability required.
 
-| Mistake | Fix |
-|---------|-----|
-| **Using binary search on unsorted** | Must sort first (or verify sorted) |
-| **Off-by-one in binary search** | Use left ≤ right, mid = (left+right)//2 |
-| **Forgetting to check boundaries** | Always check left ≤ right condition |
+**Mistake 4: "Elementary sorts useless for large n"**
+Reality: True, but used within advanced sorts for small subarrays (< 64 elements).
+
+**Mistake 5: "Heap sort guaranteed O(n log n), so use always"**
+Reality: Slower in practice than quick sort due to cache misses.
 
 ---
 
 ## 🎓 Practice Problems Guide
 
-### Sorting Problems
+### Sorting (Days 1-3)
+1. Implement all 5 sorts from scratch
+2. Trace on specific arrays
+3. Compare performance
+4. Analyze stability
+5. Find kth largest (heap)
 
-**Easy:**
-- Sort array of 0s and 1s
-- Merge sorted arrays
-- Check if array is sorted
-- Time: 15-20 min
-
-**Medium:**
-- Kth largest element
-- Merge intervals
-- Top K frequent elements
-- Time: 25-40 min
-
-**Hard:**
-- Reverse pairs
-- Sliding window median
-- Time: 45-60 min
-
-### Search Problems
-
-**Easy:**
-- Binary search
-- Search insert position
-- Peak element
-- Time: 15-25 min
-
-**Medium:**
-- Search in rotated array
-- Find first/last position
-- Search 2D matrix
-- Time: 25-40 min
-
-**Sources:** LeetCode, GeeksforGeeks, HackerRank
+### Hashing (Days 4-5)
+1. Design simple hash function
+2. Implement chaining
+3. Implement open addressing
+4. Handle collisions
+5. Build dynamic hash table
 
 ---
 
 ## 💼 Interview Preparation
 
-### Common Week 3 Questions
+**Interview Coverage:** Sorting & hashing = ~40-50% of problems (after Week 2's 30-40%)
 
-**Sorting:**
-- "When would you use Quicksort vs Mergesort?"
-- "How to optimize sorting with duplicates?"
-- "Implement quicksort from scratch"
-- "Sort 1 million numbers with limited memory"
-
-**Search:**
-- "Implement binary search"
-- "Find element in rotated sorted array"
-- "Search in 2D sorted matrix"
-
-**Optimization:**
-- "Kth largest element efficiently"
-- "Median of two sorted arrays"
-- "Sort by frequency"
-
-### Interview Tips
-1. **Clarify constraints:** "In-place? Stable? Memory limit?"
-2. **Justify choice:** "I chose Mergesort because stable"
-3. **Discuss trade-offs:** "Quicksort faster average, Mergesort worst-case"
-4. **Test edge cases:** "Empty array, one element, duplicates"
-5. **Explain complexity:** "Time O(n log n), space O(n) for merge sort"
+**Key Topics:**
+- When to use each sort
+- Stability vs performance trade-offs
+- Hash table implementation
+- Load factor and rehashing
 
 ---
 
 ## 🔗 Resources & References
 
-### Online Platforms
-- **LeetCode:** Sorting and searching problems
-- **GeeksforGeeks:** Algorithm tutorials with animations
-- **Khan Academy:** Algorithm videos
+**Books:**
+- "Algorithms" by Sedgewick (Chapters 2-3: Sorting, Searching)
+- "Introduction to Algorithms" (Chapters 7-8: Quicksort, Heapsort)
 
-### Visualization Tools
-- **VisuAlgo:** https://www.cs.usfca.edu/~galles/visualization/ (Sort, Search)
-- **Algorithm Visualizer:** https://algorithm-visualizer.org/
-
-### Recommended Books
-- "Introduction to Algorithms" - CLRS (Chapter 6-9)
-- "Cracking the Coding Interview" - Chapter 11
-- "The Algorithm Design Manual" - Skiena (Chapter 4)
+**Online:**
+- Sorting visualizations (visualgo.net)
+- Hash function analysis
 
 ---
 
 ## ✅ Assessment & Success Criteria
 
-### Knowledge Check
-- [ ] Know time complexity of each sort
-- [ ] Understand divide-and-conquer concept
-- [ ] Know when sorting is stable
-- [ ] Understand binary search requirements
-- [ ] Can choose optimal algorithm
+**Knowledge:**
+- [ ] Explain sorting trade-offs
+- [ ] Analyze hash table collisions
+- [ ] Understand Big-O for each algorithm
 
-### Practical Skills
-- [ ] Implement 6 sorting algorithms
-- [ ] Implement binary search
-- [ ] Analyze algorithm efficiency
-- [ ] Optimize sorting problems
-- [ ] Handle edge cases
+**Skills:**
+- [ ] Implement merge sort
+- [ ] Implement quick sort
+- [ ] Design hash table with chaining
+- [ ] Implement open addressing
 
-### Confidence Targets
-| Algorithm | Target |
-|-----------|--------|
-| O(n²) Sorts | 5/5 |
-| Mergesort | 4-5/5 |
-| Quicksort | 4/5 |
-| Heap Sort | 3-4/5 |
-| Binary Search | 4-5/5 |
-| Integration | 3-4/5 |
-| Overall Week 3 | 4/5 |
+**Judgment:**
+- [ ] Choose sort for specific problem
+- [ ] Choose hash table implementation
+- [ ] Optimize for specific constraints
 
 ---
 
 ## 📊 Connection to Future Weeks
 
-### Week 4: Optimization Uses Sorting
-```
-Week 3 Sorting
-    ↓
-Week 4 Two pointers requires sorted array
-    ↓
-Must understand sorting for optimization
-```
-
-### Week 4.5: Binary Search Enhancement
-```
-Week 3 Binary search intro
-    ↓
-Week 4.5 Advanced binary search patterns
-    ↓
-Foundation from Week 3 essential
-```
-
-### Week 5+: Advanced Algorithms
-```
-Weeks 1-3 Fundamentals, Data Structures, Sorting/Search
-    ↓
-Weeks 5+ Greedy, DP, Graphs (often combined with sorting)
-    ↓
-Mastery of sorting critical for success
-```
+**Week 4:** Binary search on sorted arrays, two-pointer patterns  
+**Week 4.5:** Hash Map pattern (Tier 1, 70% interview coverage!)  
+**Week 5:** Trees use sorting, hashing for lookups  
+**Week 6:** Graphs use hash tables for adjacency, BFS  
 
 ---
 
 ## ❓ Frequently Asked Questions
 
-### Q1: Why learn simple O(n²) sorts if O(n log n) exist?
-**A:** Understanding basics helps understanding advanced. Plus, O(n²) is acceptable for small n (< 1000).
+**Q: When use merge sort vs quick sort?**
+A: Merge if stability needed or external sorting. Quick for general cases (faster in practice).
 
-### Q2: When would you use Bubble sort in real code?
-**A:** Rarely. But if nearly sorted, Bubble/Insertion better. Good for teaching stability concept.
+**Q: Is insertion sort really used?**
+A: Yes, in TimSort (hybrid) and for small subarrays in advanced sorts.
 
-### Q3: Quicksort O(n²) worst case - is it acceptable?
-**A:** With random pivot or median-of-3, worst case unlikely. Trade-off: simpler implementation vs guaranteed O(n log n).
+**Q: Why hash tables over binary search trees?**
+A: Hash tables O(1) average vs tree O(log n) guaranteed. Hash better for equal distribution.
 
-### Q4: Do I need to memorize all sorts?
-**A:** No. Understand logic. Interview: implement 2-3 well rather than all poorly.
+**Q: Load factor 0.75 — why this number?**
+A: Empirically minimizes collisions while avoiding excess rehashing.
 
-### Q5: How to choose sort in interview?
-**A:** Ask: "Stable needed?" (use Merge), "In-place?" (use Quick), "Worst-case guaranteed?" (use Merge/Heap)
-
-### Q6: Binary search vs linear for small arrays?
-**A:** Linear faster for very small (< 100). Binary better for large. Consider setup cost.
+**Q: Can I implement my own hash function?**
+A: Possible, but dangerous. Use library implementations (cryptographically weak functions are bad).
 
 ---
 
 ## 🎯 Before Moving to Week 4
 
-**Checklist:**
-- [ ] Implement 6 sorting algorithms
-- [ ] Implement binary search (3+ variants)
-- [ ] Solve 15+ sorting problems
-- [ ] Solve 10+ search problems
-- [ ] Can choose optimal sort for constraint
-- [ ] Understand trade-offs (time, space, stability)
-- [ ] Overall confidence: 4/5 or higher
+**Verification Checklist:**
+- [ ] Can trace bubble, insertion, selection
+- [ ] Can trace merge sort and quick sort
+- [ ] Understand heap operations
+- [ ] Can explain hash collisions
+- [ ] Rate 4/5 or higher on all 5 days
 
-**If not ready:**
-- Implement more sorts
-- Solve more practice problems
-- Don't rush Week 4
+**If not ready:** Spend 1-2 more days on weak areas.
 
 ---
 
-## 📝 Week 3 Quick Summary
+## 📝 Week 3 Quick Summary (Table)
 
-| Algorithm | Best | Avg | Worst | Space | Notes |
-|-----------|------|-----|-------|-------|-------|
-| Bubble | O(n) | O(n²) | O(n²) | O(1) | Nearly sorted |
-| Selection | O(n²) | O(n²) | O(n²) | O(1) | Min swaps |
-| Merge | O(n log n) | O(n log n) | O(n log n) | O(n) | Stable, guaranteed |
-| Quick | O(n log n) | O(n log n) | O(n²) | O(log n) | Fast average |
-| Heap | O(n log n) | O(n log n) | O(n log n) | O(1) | In-place |
+| Algorithm | Best | Average | Worst | Space | Stable | Notes |
+|-----------|------|---------|-------|-------|--------|-------|
+| **Bubble** | O(n²) | O(n²) | O(n²) | O(1) | ✓ | Rarely use |
+| **Insertion** | O(n) | O(n²) | O(n²) | O(1) | ✓ | Small n, adaptive |
+| **Selection** | O(n²) | O(n²) | O(n²) | O(1) | ✗ | Min writes |
+| **Merge** | O(n log n) | O(n log n) | O(n log n) | O(n) | ✓ | Stable, guaranteed |
+| **Quick** | O(n log n) | O(n log n) | O(n²) | O(log n) | ✗ | Fast in practice |
+| **Heap** | O(n log n) | O(n log n) | O(n log n) | O(1) | ✗ | Guaranteed, slower |
+| **Hash** | O(1) | O(1) | O(n) | O(n) | — | Avg case wins |
 
 ---
 
-**Status:** Week 3 Ready for Study ✓  
-**Expected Completion:** 1 week focused study  
-**Success Rate:** 85%+ with consistent practice  
+**Total Learning:** 12-14 hours  
+**Interview Coverage (cumulative):** ~50%  
+**Next:** Week 4 (Problem-Solving Patterns)
 

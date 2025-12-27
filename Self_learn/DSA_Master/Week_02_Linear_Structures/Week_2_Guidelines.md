@@ -1,387 +1,300 @@
-# Week 2: Core Data Structures - Guidelines
-
-**Week Focus:** Master fundamental data structures (Stacks, Queues, HashMaps, Heaps basics)  
-**Total Time Investment:** 9-11 hours (learning + practice)  
-**Difficulty Level:** 🟡 Medium  
-**Prerequisites:** Week 1 (Array & String fundamentals)
-
----
+# Week 2: Linear Structures — Guidelines
 
 ## 📅 Daily Breakdown & Time Allocation
 
-| Day | Topic | Time | Key Outcomes |
-|-----|-------|------|--------------|
-| **1** | Stacks Fundamentals | 90 min | LIFO, push/pop, common patterns |
-| **2** | Queues Fundamentals | 90 min | FIFO, enqueue/dequeue, circular queues |
-| **3** | Hash Tables/Maps | 95 min | Hash function, collision, lookup O(1) |
-| **4** | Heaps & Priority Queues | 85 min | Min/max heaps, heap operations |
-| **5** | Data Structure Integration | 80 min | Choose right structure, solve problems |
+**Total Week:** 10-12 hours (2-2.5 hours per day)
 
-**Total Core Learning:** ~440 minutes (7.3 hours)  
-**Practice & Consolidation:** ~3-4 hours  
+| Day | Topic | Time | Core Concepts | Practice |
+|-----|-------|------|---------------|----------|
+| **1** | Arrays | 2.5h | Direct addressing, O(1) access, cache | 10 problems |
+| **2** | Dynamic Arrays | 2.5h | Exponential growth, amortized analysis | 8 problems |
+| **3** | Linked Lists | 2.5h | Pointer-based, O(n) access, O(1) relink | 8 problems |
+| **4** | Stacks & Queues | 2h | LIFO/FIFO, O(1) ops, circular buffer | 8 problems |
+| **5** | Binary Search | 2h | Divide-by-2, O(log n), preconditions | 8 problems |
+| **Weekend** | Integration | 2h | Synthesis, comparison, patterns | Review all |
 
 ---
 
-## 🎯 Week 2 Learning Objectives
+## 🎯 Learning Objectives
 
-### By Week End, You Should:
+### By End of Day 1 (Arrays)
+- [ ] Understand direct addressing: address = base + index × size
+- [ ] Know array access is O(1)
+- [ ] Know insertion/deletion is O(n)
+- [ ] Understand cache locality impact
+- [ ] Can explain when to use arrays
 
-**Knowledge:**
-- [ ] Understand LIFO (Stack) concept
-- [ ] Understand FIFO (Queue) concept
-- [ ] Understand hashing and hash tables
-- [ ] Understand heap data structure
-- [ ] Know when to use each structure
+### By End of Day 2 (Dynamic Arrays)
+- [ ] Understand exponential growth strategy
+- [ ] Know amortized O(1) append
+- [ ] Understand why 2x is better than +k growth
+- [ ] Can calculate total cost for n appends
 
-**Skills:**
-- [ ] Implement Stack from array
-- [ ] Implement Queue from array
-- [ ] Implement HashMap/Dictionary
-- [ ] Implement Min/Max Heap
-- [ ] Solve problems using right structure
+### By End of Day 3 (Linked Lists)
+- [ ] Understand pointer-based access (O(n))
+- [ ] Know O(1) insertion/deletion at known position
+- [ ] Know cache behavior is poor
+- [ ] Understand when lists are appropriate (rarely!)
 
-**Application:**
-- [ ] Use stacks for bracket matching
-- [ ] Use queues for BFS
-- [ ] Use hashes for duplicate detection
-- [ ] Use heaps for top-k problems
-- [ ] Choose structure based on requirements
+### By End of Day 4 (Stacks & Queues)
+- [ ] Understand LIFO (stack) and FIFO (queue) semantics
+- [ ] Know push/pop/enqueue/dequeue are O(1)
+- [ ] Can implement both using arrays
+- [ ] Know real applications (undo, scheduling, BFS)
+
+### By End of Day 5 (Binary Search)
+- [ ] Understand divide-and-conquer: halve search space each step
+- [ ] Know precondition: array must be sorted
+- [ ] Can trace binary search by hand
+- [ ] Know O(log n) complexity and why
 
 ---
 
 ## 📚 Core Concepts Overview
 
-### Stack
-```
-Operations: push (add), pop (remove), peek (view top)
-Order: LIFO (Last-In-First-Out)
-Time: O(1) for all operations
-Use Cases: Bracket matching, undo, function call stack
-```
+### Concept 1: Direct Addressing
+**What:** Computing address via arithmetic: base + index × size  
+**Why:** O(1) access without search  
+**Where:** All array-based structures
 
-### Queue
-```
-Operations: enqueue (add rear), dequeue (remove front), peek
-Order: FIFO (First-In-First-Out)
-Time: O(1) for all operations
-Use Cases: BFS, task scheduling, printer queue
-```
+### Concept 2: Amortized Analysis
+**What:** Occasional expensive operation amortized over many cheap ones  
+**Why:** O(1) append despite O(n) resizes  
+**Where:** Dynamic arrays, dynamic structures
 
-### Hash Table/Map
-```
-Operations: insert, delete, lookup
-Average Time: O(1) for all operations
-Space: O(n) for n key-value pairs
-Use Cases: Caching, frequency counting, deduplication
-```
+### Concept 3: Pointer Chasing
+**What:** Following pointer → pointer → pointer to reach element  
+**Why:** O(n) access in linked lists  
+**Cache Impact:** 50x slower than arrays due to cache misses
 
-### Heap
-```
-Operations: insert, delete-min/max, heapify
-Time: O(log n) for operations
-Property: Parent ≤ (or ≥) children
-Use Cases: Priority queues, top-k elements, sorting
-```
+### Concept 4: LIFO vs FIFO
+**What:** Different access orderings  
+**Stack:** Last-in-first-out (undo, recursion)  
+**Queue:** First-in-first-out (scheduling, BFS)
+
+### Concept 5: Divide-and-Conquer
+**What:** Halve problem size each step  
+**Binary Search:** Halve search space → O(log n)  
+**Precondition:** Sorted array required
 
 ---
 
 ## 🔄 Recommended Learning Path
 
-**Best Order to Study:**
+**Morning (90 min):**
+1. Read instructional file (all 11 sections)
+2. Trace examples by hand on paper
+3. Visualize operations mentally
 
-1. **Day 1:** Stacks Fundamentals
-   - Understand LIFO concept
-   - Implement from array
-   - Practice basic operations
-   - Solve bracket matching
+**Afternoon (60 min):**
+1. Answer Socratic questions
+2. Solve 5-8 practice problems
+3. Identify misconceptions
 
-2. **Day 2:** Queues Fundamentals
-   - Understand FIFO concept
-   - Implement from array
-   - Learn circular queues
-   - Apply to BFS concept
-
-3. **Day 3:** Hash Tables
-   - Understand hashing
-   - Collision handling
-   - Map/Dictionary implementation
-   - Common use patterns
-
-4. **Day 4:** Heaps & Priority Queues
-   - Understand heap property
-   - Build max/min heaps
-   - Heap operations (insert, delete)
-   - Priority queue applications
-
-5. **Day 5:** Integration
-   - Choose right structure
-   - Combine structures
-   - Solve complex problems
-
-**Why This Order?**
-- Stack and Queue are simple (start there)
-- Hash Tables are critical (middle week)
-- Heaps are more complex (after comfort)
-- Integration uses all concepts
+**Evening (30 min):**
+1. Check checklist progress
+2. Rate confidence (1-5)
+3. Plan next day
 
 ---
 
 ## ⚠️ Common Mistakes to Avoid
 
-### Stack-Related
+### Mistake 1: "Insert/delete is O(n), so never use arrays"
+**Reality:** Insert at END is O(1) amortized. Only mid-insertion is O(n). For most problems, use arrays.
 
-| Mistake | Fix |
-|---------|-----|
-| **Pop from empty stack** | Check if stack empty before pop |
-| **Confusing push/pop order** | Remember: pop returns LIFO (last in) |
-| **Using array append (slow)** | Use deque for O(1) operations |
+### Mistake 2: "Amortized O(1) means it's always O(1)"
+**Reality:** Occasional O(n) pauses happen (resizes). Averaged over n operations, each is O(1).
 
-### Queue-Related
+### Mistake 3: "Linked lists are better than arrays for unknown size"
+**Reality:** Use dynamic arrays! Better cache, O(1) amortized append, simpler.
 
-| Mistake | Fix |
-|---------|-----|
-| **Dequeue from empty queue** | Check if queue empty |
-| **Not using circular indexing** | Use (rear + 1) % size for wraparound |
-| **Array shifting is O(n)** | Use deque or circular array |
+### Mistake 4: "Arrays and lists have same O(n) insertion"
+**Reality:** Array insertion requires shifting (O(n) copies). List insertion is O(1) IF you have pointer to position.
 
-### Hash Table-Related
-
-| Mistake | Fix |
-|---------|-----|
-| **Ignoring collisions** | Use chaining or open addressing |
-| **Bad hash function** | Use built-in hash, not naive modulo |
-| **Key doesn't exist error** | Check key existence before access |
-
-### Heap-Related
-
-| Mistake | Fix |
-|---------|-----|
-| **Breaking heap property** | Heapify after insertion/deletion |
-| **Parent-child index confusion** | left = 2i+1, right = 2i+2 (0-indexed) |
-| **Using list pop (slow)** | Pop from end is O(1), others are O(n) |
+### Mistake 5: "Binary search works on unsorted arrays"
+**Reality:** Completely breaks. You'll skip over the target element.
 
 ---
 
 ## 🎓 Practice Problems Guide
 
-### Stack Problems
+### Arrays (Day 1)
+1. Two Sum (find pair with given sum)
+2. Best Time to Buy Stock (max difference)
+3. Contains Duplicate
+4. Product of Array Except Self
+5. Rotate Array
 
-**Easy:**
-- Valid parentheses
-- Min stack
-- Reverse string using stack
-- Time: 15-25 min
+### Dynamic Arrays (Day 2)
+1. Design Dynamic Array class
+2. Analyze growth factor impact
+3. Implement resizable stack
 
-**Medium:**
-- Largest rectangle in histogram
-- Daily temperatures
-- Evaluate RPN
-- Time: 25-40 min
+### Linked Lists (Day 3)
+1. Reverse Linked List
+2. Merge Two Sorted Lists
+3. Detect Cycle
+4. Remove Nth Node from End
 
-### Queue Problems
+### Stacks & Queues (Day 4)
+1. Valid Parentheses (stack)
+2. Implement Queue using Stacks
+3. Next Greater Element (monotonic stack preview)
+4. Moving Average (circular buffer)
 
-**Easy:**
-- Implement queue
-- Implement circular queue
-- Moving average from stream
-- Time: 15-25 min
-
-**Medium:**
-- Number of recent calls
-- Dota2 Senate
-- Time: 30-40 min
-
-### Hash Table Problems
-
-**Easy:**
-- Two sum
-- Contains duplicate
-- Valid anagram
-- Time: 15-20 min
-
-**Medium:**
-- LRU cache
-- Group anagrams
-- Top K frequent
-- Time: 30-45 min
-
-### Heap Problems
-
-**Easy:**
-- Last stone weight
-- Kth largest element
-- Time: 20-30 min
-
-**Medium:**
-- Top K frequent elements
-- Merge K sorted lists
-- Time: 35-50 min
-
-**Sources:** LeetCode (Easy/Medium), GeeksforGeeks, HackerRank
+### Binary Search (Day 5)
+1. Binary Search on sorted array
+2. Search Insert Position
+3. First Bad Version
+4. Find Peak Element (modified binary search)
 
 ---
 
 ## 💼 Interview Preparation
 
-### Common Week 2 Questions
+**Interview Coverage:** Week 2 covers ~30-40% of interview problems
 
-**Stack:**
-- "How to implement stack with min/max?"
-- "Reverse a string using stack"
-- "Valid parentheses matching"
+### Key Topics for Interviews
+- **Arrays:** 2-pointer problems, prefix sums (Week 4)
+- **Stacks:** Matching parentheses, monotonic stack (Week 4.5)
+- **Queues:** BFS-based problems (Week 6)
+- **Binary Search:** Log n optimization technique (appear everywhere)
 
-**Queue:**
-- "Implement queue with two stacks"
-- "BFS - when to use queue?"
-- "Circular queue implementation"
-
-**Hash Table:**
-- "Implement hash table from scratch"
-- "Handle collisions"
-- "Design LRU cache"
-
-**Heap:**
-- "Implement min/max heap"
-- "Top K elements"
-- "Merge K sorted arrays"
-
-### Interview Tips
-1. **Clarify requirements:** "What about duplicates? Update operations?"
-2. **Discuss trade-offs:** "Stack vs array? Time vs space?"
-3. **Handle edge cases:** "Empty, single element, duplicates"
-4. **Explain space complexity:** "Hash table uses O(n) space"
-5. **Show implementation:** Code clean, readable, tested
+### Common Interview Questions
+- "Design a data structure that supports..."
+- "Optimize this O(n²) solution"
+- "What's the space/time trade-off?"
 
 ---
 
 ## 🔗 Resources & References
 
-### Online Platforms
-- **LeetCode:** Stack, Queue, Hash Table, Heap problems
-- **GeeksforGeeks:** Data structure tutorials
-- **VisuAlgo:** Data structure visualization
+### Books
+- "Cracking the Coding Interview" (Chapter 1-2: Arrays, Stacks/Queues)
+- "Algorithms" by Sedgewick & Wayne (Chapters 1-2)
 
-### Visualization Tools
-- **VisuAlgo (Stack/Queue):** https://www.cs.usfca.edu/~galles/visualization/
-- **Python Tutor:** https://pythontutor.com
+### Online
+- LeetCode: Array, Stack, Queue, Binary Search tags
+- GeeksforGeeks: Data structure visualizations
 
-### Recommended Books
-- "Introduction to Algorithms" - CLRS (Chapter 10-11)
-- "Cracking the Coding Interview" - Chapter 3 (Stacks and Queues)
-- "The Algorithm Design Manual" - Skiena (Chapter 3)
+### Code Examples
+- C++ `<vector>`, `<stack>`, `<queue>`
+- Python `list`, `collections.deque`
+- Java `ArrayList`, `Stack`, `Queue`
 
 ---
 
 ## ✅ Assessment & Success Criteria
 
-### Knowledge Check
-- [ ] Understand when to use Stack vs Queue
-- [ ] Know O(1) operations for each structure
-- [ ] Understand hash function and collisions
-- [ ] Know heap property and operations
-- [ ] Can choose right structure for problem
+### Knowledge (Can you explain?)
+- [ ] Why array access is O(1)
+- [ ] Difference between amortized and worst-case
+- [ ] When to use stack vs queue
+- [ ] Why binary search requires sorted array
 
-### Practical Skills
-- [ ] Implement Stack from array
-- [ ] Implement Queue from array
-- [ ] Implement HashMap manually
-- [ ] Build Min/Max Heap
-- [ ] Use built-in data structures efficiently
+### Skills (Can you do?)
+- [ ] Trace array insertion/deletion by hand
+- [ ] Trace binary search on any array
+- [ ] Implement stack and queue
+- [ ] Analyze time/space complexity of operations
 
-### Confidence Targets
-| Structure | Target |
-|-----------|--------|
-| Stack | 5/5 |
-| Queue | 4-5/5 |
-| Hash Table | 4/5 |
-| Heap | 3-4/5 |
-| Integration | 3-4/5 |
-| Overall Week 2 | 4/5 |
+### Judgment (Can you choose?)
+- [ ] Array vs list for problem
+- [ ] Stack vs queue for problem
+- [ ] Dynamic array vs fixed array
+- [ ] Binary search vs linear search
+
+**Red Flags (Need more practice):**
+- Can't derive O(1) array access from RAM model
+- Confused about amortized analysis
+- Don't know when linked lists are useful
+- Can't trace binary search by hand
 
 ---
 
 ## 📊 Connection to Future Weeks
 
-### Week 3: Sorting Applications
-```
-Week 2 Data Structures
-    ↓
-Week 3 Sorting uses Heaps for Heap Sort
-    ↓
-Understanding heap structure essential
-```
+**Week 3 (Sorting & Hashing):**
+- Sorting algorithms use arrays
+- Hash table implementation uses arrays (chaining or probing)
+- Hashtable collision resolution uses linked lists
 
-### Week 4: Optimization Patterns
-```
-Week 2 Hash Tables, Stacks, Queues
-    ↓
-Week 4 Two pointers, sliding window (often with sets/maps)
-    ↓
-Must understand hash table efficiency
-```
+**Week 4 (Problem-Solving Patterns):**
+- Two pointers on sorted arrays (binary search preprocessed)
+- Sliding windows on arrays
+- Prefix sums on arrays
 
-### Week 5+: Advanced Algorithms
-```
-Weeks 1-2 Fundamentals & Data Structures
-    ↓
-Weeks 5+ Greedy, DP, Graphs (all use data structures)
-    ↓
-Comfortable with all structures → solve advanced problems
-```
+**Week 4.5 (Tier 1 Patterns):**
+- Monotonic stack uses stack + deque
+- Merge operations on arrays/lists
+- Hash maps use arrays for buckets
+
+**Weeks 6+ (Advanced):**
+- Graphs use adjacency lists (linked lists)
+- Queues for BFS
+- Binary search in B-trees
 
 ---
 
 ## ❓ Frequently Asked Questions
 
-### Q1: Why implement data structures if languages have them?
-**A:** Interviews often ask. Understanding implementation shows mastery. Plus, you can optimize (like designing LRU cache).
+**Q: Do I need to implement arrays from scratch?**
+A: Once, for understanding. Then use library containers (vector, ArrayList).
 
-### Q2: When would I use Stack vs Array?
-**A:** Stack when you need LIFO order. Array when you need random access. Stack has cleaner semantics.
+**Q: Is linked list ever better than array?**
+A: Rarely. Only for: (1) undo/redo systems, (2) memory allocators, (3) LRU caches. 99% use arrays.
 
-### Q3: What about Queue implementation? Isn't deque better?
-**A:** Yes! Use deque. But understand why (O(1) operations). Interview might ask array-based implementation.
+**Q: Why is amortized analysis important?**
+A: Because worst-case (O(n) resize) isn't representative. Average case (O(1)) is what matters for repeated operations.
 
-### Q4: Can I use Python's deque for both Stack and Queue?
-**A:** Yes! append/pop for stack, appendleft/pop for queue. But understand underlying implementation.
+**Q: Can I use hashtable as fallback for array/list?**
+A: Not really. Hashtables have different semantics (unordered, hashing overhead). Use right structure for problem.
 
-### Q5: Is understanding collision handling important?
-**A:** Very! Shows deep understanding. Common follow-up: "How to handle collisions?" or "Design hash table"
-
-### Q6: When to use Heap vs Sorted Array?
-**A:** Heap for dynamic top-k. Sorted array if all data upfront. Heap: O(log n) insert/delete, Array: O(1) access.
+**Q: Is binary search just "divide by 2"?**
+A: Yes, conceptually. Implementation requires careful details: (left + right) / 2, proper boundary checks.
 
 ---
 
 ## 🎯 Before Moving to Week 3
 
-**Checklist:**
-- [ ] Implement all 4 data structures from scratch
-- [ ] Solve 3-5 problems per structure (12-20 total)
-- [ ] Understand when to use each structure
-- [ ] Can compare trade-offs (time, space, use case)
-- [ ] Feel confident implementing and using them
-- [ ] Overall confidence: 4/5 or higher
+**Verification Checklist:**
+- [ ] Can explain direct addressing (address = base + i × size)
+- [ ] Understand amortized O(1) append for dynamic arrays
+- [ ] Know linked list O(n) access vs O(1) relink trade-off
+- [ ] Can implement stack/queue correctly
+- [ ] Can trace binary search by hand
+- [ ] Rate 4/5 or higher on all 5 days
 
-**If not ready:**
-- Review structure implementation
-- Solve more practice problems (5 per structure)
-- Don't rush to Week 3
-
----
-
-## 📝 Week 2 Quick Summary
-
-| Structure | Core Operations | Time | Use When |
-|-----------|-----------------|------|----------|
-| **Stack** | push, pop, peek | O(1) | LIFO needed |
-| **Queue** | enqueue, dequeue, peek | O(1) | FIFO needed |
-| **Hash Table** | insert, delete, lookup | O(1) avg | Fast lookup needed |
-| **Heap** | insert, delete-min/max | O(log n) | Priority order needed |
+**If not:**
+- Spend 1-2 more days on weak areas
+- Re-read instructional files
+- Solve more practice problems
+- Don't move forward with gaps!
 
 ---
 
-**Status:** Week 2 Ready for Study ✓  
-**Expected Completion:** 1 week focused study  
-**Success Rate:** 90%+ with consistent practice  
+## 📝 Week 2 Quick Summary (Table)
+
+| Structure | Access | Insert | Delete | Space | Use Case |
+|-----------|--------|--------|--------|-------|----------|
+| **Array** | O(1) | O(n) | O(n) | O(n) | Indexed access, sequential |
+| **Vector** | O(1) | O(n)* | O(n)* | O(n) | Dynamic, append-heavy |
+| **LinkedList** | O(n) | O(1)† | O(1)† | O(n) | Undo/redo, allocators |
+| **Stack** | — | O(1)‡ | O(1)‡ | O(n) | LIFO semantics |
+| **Queue** | — | O(1)‡ | O(1)‡ | O(n) | FIFO semantics |
+| **Sorted** | O(log n) binary search | — | — | O(1) | Search (via binary search) |
+
+*Amortized  †At known position  ‡Push/pop or enqueue/dequeue
+
+---
+
+## 📊 Status & Cumulative Progress
+
+**Week 1:** ✅ Foundations (RAM, Big-O, Recursion)  
+**Week 2:** 🔄 LINEAR STRUCTURES (Arrays, Lists, Stacks, Queues, Search)  
+**Cumulative Time:** ~20 hours  
+**Interview Coverage:** ~30-40%  
+
+**Next:** Week 3 (Sorting & Hashing) — builds heavily on Week 2 arrays and binary search
 
