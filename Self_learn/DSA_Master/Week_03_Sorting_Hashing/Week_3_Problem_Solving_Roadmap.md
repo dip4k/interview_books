@@ -1,205 +1,156 @@
-# Week 3: Problem-Solving Roadmap
+# Week 3: Problem-Solving Roadmap & Decision Trees
 
 ## 📊 Problem-Solving Framework
 
-**5-Step Process for Sorting/Hashing Problems:**
+**For EVERY sorting/hashing problem, follow this 5-step process:**
 
-1. **Understand** input, output, constraints
-2. **Identify** if sorting or hashing applies
-3. **Choose** algorithm based on requirements
-4. **Implement** correctly
-5. **Verify** with examples
-
----
-
-## 🎯 Sorting Problem-Type Roadmap
-
-### Type 1: General Sort
-**Pattern:** "Sort array, need output in order"
-- **Decision:** Use quick sort (most languages)
-- **Cost:** O(n log n) average, O(1) space
-
-### Type 2: Stable Sort Required
-**Pattern:** "Sort by primary, secondary key"
-- **Decision:** Merge sort or insertion sort
-- **Cost:** O(n log n) guaranteed, stable
-
-### Type 3: Small Array
-**Pattern:** "n < 50, simplicity matters"
-- **Decision:** Insertion sort
-- **Cost:** O(n²) acceptable, simpler code
-
-### Type 4: Nearly-Sorted Data
-**Pattern:** "Data mostly ordered with few changes"
-- **Decision:** Insertion sort
-- **Cost:** O(n) on nearly-sorted data
-
-### Type 5: Guaranteed O(n log n) Needed
-**Pattern:** "Hard deadline, worst-case matters"
-- **Decision:** Merge sort or heap sort
-- **Cost:** O(n log n) guaranteed
-
-### Type 6: Find Kth Largest
-**Pattern:** "Find kth element without fully sorting"
-- **Decision:** Heap (min-heap of k elements) or quickselect
-- **Cost:** O(n log k) for heap, O(n) average for quickselect
+1. **IDENTIFY:** What operation? (sorting, lookup, counting, duplicate detection)
+2. **RECOGNIZE:** Which category? (elementary, divide-conquer, hash-based)
+3. **SELECT:** Which algorithm? (consider time/space/stability constraints)
+4. **IMPLEMENT:** Code with proper data structures
+5. **OPTIMIZE:** Handle edge cases, improve based on constraints
 
 ---
 
-## 🎯 Hashing Problem-Type Roadmap
-
-### Type 1: Find Duplicates
-**Pattern:** "Check if element appears twice"
-- **Decision:** Hash set
-- **Cost:** O(1) insert/lookup, O(n) total
-
-### Type 2: Frequency Count
-**Pattern:** "Count occurrences of elements"
-- **Decision:** Hash map (element → count)
-- **Cost:** O(1) per update, O(n) total
-
-### Type 3: Check Anagrams
-**Pattern:** "Verify two strings are anagrams"
-- **Decision:** Hash map of character frequencies
-- **Cost:** O(n) to build, O(1) to compare
-
-### Type 4: Two Sum / Pair Problems
-**Pattern:** "Find pair of elements with specific sum"
-- **Decision:** Hash set or hash map
-- **Cost:** O(1) lookup, O(n) total
-
-### Type 5: Intersection/Union
-**Pattern:** "Find common/unique elements"
-- **Decision:** Hash sets
-- **Cost:** O(n) for intersection, O(n) for union
-
----
-
-## 🌳 Decision Tree: Sorting
+## 🎯 Sorting Decision Tree
 
 ```
-START: "I need to sort data"
+Is input DATA SMALL (< 50 elements)?
+├─ YES: Is it NEARLY SORTED?
+│   ├─ YES: Use INSERTION SORT → O(n) best, O(1) space
+│   └─ NO: Use SELECTION SORT → O(n²) but only n swaps
+└─ NO: Continue below
 
-1. Is array already mostly sorted?
-   ├─ YES → Insertion sort (O(n))
-   └─ NO → Continue
+Is STABILITY REQUIRED (equal elements maintain order)?
+├─ YES: Use MERGE SORT → O(n log n) guaranteed, stable
+└─ NO: Continue below
 
-2. Must preserve relative order of equal elements?
-   ├─ YES → Merge sort (stable)
-   └─ NO → Continue
+Is SPACE CRITICAL (O(1) required)?
+├─ YES: Use HEAP SORT → O(n log n) guaranteed, in-place
+└─ NO: Continue below
 
-3. Need guaranteed O(n log n) worst-case?
-   ├─ YES → Merge sort or heap sort
-   └─ NO → Continue
-
-4. Is array size small (n < 50)?
-   ├─ YES → Insertion sort (simpler)
-   └─ NO → Quick sort (faster in practice)
+Is AVERAGE PERFORMANCE most important?
+├─ YES: Use QUICK SORT → O(n log n) average, fast
+└─ NO: Use MERGE SORT (guarantee O(n log n))
 ```
 
 ---
 
-## 🌳 Decision Tree: Hashing
+## 🎯 Hashing Decision Tree
 
 ```
-START: "I need fast key-value lookup"
+Is EXACT LOOKUP needed?
+├─ YES: Is ORDERING important?
+│   ├─ YES: Use BALANCED BST or SORTED ARRAY
+│   └─ NO: Use HASH TABLE → O(1) average
+└─ NO: Continue below
 
-1. Need ordered iteration?
-   ├─ YES → Use tree, not hash table
-   └─ NO → Continue
+Is FREQUENCY/COUNTING needed?
+├─ YES: Use HASH MAP (key → count)
+└─ NO: Continue below
 
-2. Know all keys in advance?
-   ├─ YES → Consider perfect hashing
-   └─ NO → Dynamic hash table
+Is DUPLICATE DETECTION needed?
+├─ YES: Use HASH SET → O(1) average
+└─ NO: Different problem type
+```
 
-3. Deletions frequent?
-   ├─ YES → Chaining better than open addressing
-   └─ NO → Open addressing acceptable
+---
 
-4. Build hash table size?
-   └─→ Start with capacity = 2×expected size, rehash at 0.75
+## 🌳 Sort-Specific Roadmaps
+
+### ELEMENTARY SORTS (Bubble, Insertion, Selection)
+
+**Template:**
+```
+1. Check: Is n < 50?
+2. Select: Insertion (nearly sorted) or Selection (minimize writes)
+3. Implement: Simple loops, track comparisons/swaps
+4. Verify: Works for size 1, 2, and reverse-sorted
+```
+
+### MERGE SORT (Divide-and-Conquer Stable)
+
+**Template:**
+```
+1. Base: If n ≤ 1, return (trivially sorted)
+2. Divide: Split array in half
+3. Conquer: Recursively sort both halves
+4. Combine: Merge two sorted halves (O(n))
+5. Verify: Merge function preserves stability
+```
+
+### QUICK SORT (Divide-and-Conquer Fast Average)
+
+**Template:**
+```
+1. Base: If n ≤ 1, return
+2. Partition: Choose pivot, split into smaller/larger
+3. Conquer: Recursively sort both partitions
+4. Combine: Pivot in final position (no merge needed)
+5. Optimize: Good pivot selection critical
+```
+
+### HEAP SORT (Divide-and-Conquer In-Place)
+
+**Template:**
+```
+1. Build: Heapify array into max-heap (O(n))
+2. Extract: Repeatedly swap root with last, heapify
+3. Key: After each extraction, heap shrinks
+4. Verify: Heap invariant maintained throughout
+```
+
+### HASH TABLES
+
+**Template:**
+```
+1. Hash: Map key via hash function
+2. Index: Get bucket index (hash % table_size)
+3. Handle: Collision via chaining or probing
+4. Rehash: When load factor > 0.75
+5. Verify: All operations O(1) average, O(n) worst
 ```
 
 ---
 
 ## 🔍 Common Pitfalls & Recovery
 
-### Pitfall 1: "Use quick sort always"
-**Recovery:** Merge sort if stability needed or external sorting.
+### Pitfall 1: Choosing Wrong Algorithm
+**Symptom:** Solution correct but inefficient for constraints
+**Recovery:** Use decision tree. Quick sort for average? Merge for stable? Heap for guaranteed in-place?
 
-### Pitfall 2: "Hash tables guarantee O(1)"
-**Recovery:** O(1) average with good hash. Worst-case O(n).
+### Pitfall 2: Off-by-One in Recursive Base Case
+**Symptom:** Stack overflow or incorrect result
+**Recovery:** Explicit base cases: if n ≤ 1 return. Check boundary.
 
-### Pitfall 3: "Choosing bad pivot in quicksort"
-**Recovery:** Use median-of-three or random pivot.
+### Pitfall 3: Not Handling Hash Collisions
+**Symptom:** Data overwrites or lookup failures
+**Recovery:** Implement chaining or probing properly. Test with intentional collisions.
 
-### Pitfall 4: "Load factor too high"
-**Recovery:** Keep load factor < 0.75, rehash when exceeded.
+### Pitfall 4: Ignoring Stability
+**Symptom:** Multi-key sorting breaks
+**Recovery:** Use merge sort if stability matters. Know which sorts unstable.
 
----
-
-## 📋 Problem-Solving Template
-
-```
-PROBLEM: [Sorting or Hashing]
-
-UNDERSTAND:
-- Input: [Array? Size range?]
-- Output: [Sorted? Pairs? Counts?]
-- Constraints: [Time? Space? Stable?]
-
-IDENTIFY:
-- Sorting or hashing?
-- Which algorithm?
-
-CHOOSE:
-- Why this algorithm?
-- Trade-offs acceptable?
-
-IMPLEMENT:
-- [Algorithm]
-- [Trace example]
-
-VERIFY:
-- Edge cases: [empty, duplicates, single element]
-- Correct: [yes/no]
-```
+### Pitfall 5: Bad Hash Function
+**Symptom:** All keys hash to same bucket
+**Recovery:** Use good hash function (polynomial rolling hash, crypto hash). Test uniformity.
 
 ---
 
-## 📊 Quick Decision Matrix
+## 📋 Quick Reference Matrix
 
-| Problem Type | Recommended | Why |
-|--------------|-------------|-----|
-| General sort | Quick sort | Fast practice |
-| Stable sort | Merge sort | Preserves order |
-| Small n | Insertion sort | Simple |
-| Guaranteed O(n log n) | Merge/heap | Worst-case |
-| Find duplicates | Hash set | O(1) lookup |
-| Count frequency | Hash map | O(1) per element |
-| Two sum | Hash set | O(n) total |
-
----
-
-## ✅ Practice Problems
-
-### Sorting (Days 1-3)
-1. Sort array with all three elementary sorts
-2. Implement merge sort and quick sort
-3. Use heap sort to find kth largest
-4. Trace each on [3,1,4,1,5,9,2,6]
-5. Compare stability: why matters
-
-### Hashing (Days 4-5)
-1. Find first non-repeating character
-2. Two sum problem
-3. Check if anagrams
-4. Count word frequencies
-5. Implement hash table with chaining
+| Problem | Best Approach | Time | Space | Notes |
+|---------|---|------|-------|-------|
+| Sort array | Quick sort | O(n log n) avg | O(log n) | If not stable, else merge |
+| Sort + stability required | Merge sort | O(n log n) | O(n) | Guaranteed |
+| Sort + limited memory | Heap sort | O(n log n) | O(1) | Only guaranteed in-place |
+| Two Sum | Hash table | O(n) | O(n) | One pass with lookup |
+| Duplicate check | Hash set | O(n) | O(n) | Membership test |
+| Frequency count | Hash map | O(n) | O(n) | Each key → count |
+| Top K elements | Heap | O(n log k) | O(k) | Or quickselect O(n) avg |
+| Find median | Hash or sort | O(n) or O(n log n) | O(n) | Stream: use heap |
 
 ---
 
-## Summary
-
-**Master decision trees.** Most problems fit patterns. Choose correct algorithm, implement carefully, verify thoroughly.
+**Use this roadmap during problem-solving. Clear decision-making → correct algorithm → fast implementation.**
 

@@ -1,165 +1,265 @@
-# Week 3, Day 5: Hash Tables II
+# Week 3, Day 5: Hash Tables II — Implementation Variants
 
 ## 🗓 Metadata
-**Week:** 3 | **Day:** 5 of 5 | **Topic:** Hash Tables II  
-**Difficulty:** 🔴 Hard | **Time:** 90-120 minutes
+**Week:** 3 | **Day:** 5 of 5 | **Topic:** Hash Tables — Chaining vs Open Addressing, Real Implementations  
+**Category:** Hash Data Structures | **Difficulty:** 🟡 Medium  
+**Prerequisites:** Week 3 Day 4 (Hash Tables I fundamentals)  
+**Time:** 150-180 minutes | **Status:** 🔍 In Study
 
 ---
 
 ## 1️⃣ THE WHY — Engineering Motivation
 
-**Real-World Problem:**
-Hash table chains can get long (collisions). Two approaches: chaining vs open addressing. Which is better?
+### Real-World Problem
+Different collision handling strategies for different use cases. Chaining simple but uses extra memory (linked lists). Open addressing saves space but more complex. Must understand trade-offs. Python uses open addressing, Java uses chaining with bucket arrays.
 
-**Design Problems Solved:**
-- Collision resolution strategies
-- Load factor and rehashing
-- Practical hash table implementations
-- Trade-offs between chaining and probing
+### Design Problems Solved
+- **Memory-efficient hashing** (open addressing)
+- **Simple collision handling** (chaining)
+- **Cache-friendly storage** (open addressing better for modern CPUs)
+- **Deletion support** (chaining easier)
+- **Rehashing strategies** (resize and rehash entire table)
+- **Double hashing** (reduce clustering in open addressing)
+- **Quadratic probing** (different collision pattern)
+
+### Real System Usage
+- **Python dict:** Open addressing with quadratic probing
+- **Java HashMap:** Chaining with bucket arrays
+- **C++ unordered_map:** Chaining (implementation dependent)
+- **Bloom filters:** Open addressing variants
+- **Consistent hashing:** Distributed systems
+- **Cuckoo hashing:** Guarantees O(1) with limited probing
+
+### Why Chaining vs Open Addressing Matters
+**Different design choices yield different performance profiles.** Chaining memory-inefficient but simple. Open addressing faster for modern CPUs with good cache, but complex. Must know both to evaluate systems.
 
 ---
 
 ## 2️⃣ THE WHAT — Mental Model & Intuition
 
-### Chaining
-**Analogy:** Each bucket is a linked list. Collisions go on the chain.
+### Core Analogies
 
-```
-Bucket 0: [("Alice", 25)] → [("Bob", 28)] → [("Kim", 30)]
-Bucket 1: [("Charlie", 35)]
-Bucket 2: []
-```
+**Chaining:** Multiple books on same shelf, linked together. Adding book: append to chain. Finding book: follow chain until found.
 
-### Open Addressing
-**Analogy:** Find empty slot nearby if bucket occupied. Probe: linear, quadratic, double-hash.
+**Open Addressing:** Assigned seating. If seat taken, find next available (probing pattern). Adding person: sit in first free seat following pattern. Finding person: check pattern until found.
 
-```
-Index: 0     1     2     3     4     5
-Data:  Alice -     Bob   -     -     Kim
+### Key Differences
 
-If slot occupied, probe next slot (linear: i+1, quadratic: i+1², i+4², i+9², etc.)
-```
+| Aspect | Chaining | Open Addressing |
+|--------|----------|-----------------|
+| **Collision** | Create chain/list | Probe for empty slot |
+| **Space** | O(m + n) (extra lists) | O(m) (array only) |
+| **Load Factor** | Can exceed 1 | Limited to < 1 |
+| **Cache** | Poor (pointer following) | Good (linear memory) |
+| **Deletion** | Easy (remove node) | Hard (mark tombstone) |
+| **Clustering** | Minimal | Possible (primary) |
 
 ---
 
 ## 3️⃣ THE HOW — Mechanical Walkthrough
 
-**Chaining Insert:**
+### Chaining Collision Handling
+
 ```
-insert(key, value):
-  index = hash(key) % capacity
-  append (key, value) to linked list at buckets[index]
+INSERT_CHAINING(key, value):
+  bucket = HASH(key) % TABLE_SIZE
+  node = CREATE_NODE(key, value)
+  INSERT_AT_HEAD(table[bucket], node)  // O(1)
+
+LOOKUP_CHAINING(key):
+  bucket = HASH(key) % TABLE_SIZE
+  current = table[bucket]
+  While current != NULL:
+    if current.key == key:
+      return current.value
+    current = current.next
+  return NOT_FOUND
+
+Time: O(1) insert, O(1 + chain_length) lookup
 ```
 
-**Open Addressing Insert (linear probing):**
+### Open Addressing (Linear Probing)
+
 ```
-insert(key, value):
-  index = hash(key) % capacity
+INSERT_OPEN(key, value):
+  hash_value = HASH(key)
   i = 0
-  while buckets[(index + i) % capacity] is occupied:
+  While true:
+    index = (hash_value + i) % TABLE_SIZE
+    if table[index] is EMPTY or TOMBSTONE:
+      table[index] = (key, value)
+      return
+    if table[index].key == key:
+      table[index].value = value  // Update
+      return
+    i++  // Probe next position
+
+LOOKUP_OPEN(key):
+  hash_value = HASH(key)
+  i = 0
+  While true:
+    index = (hash_value + i) % TABLE_SIZE
+    if table[index] is EMPTY:
+      return NOT_FOUND
+    if table[index].key == key and table[index] not TOMBSTONE:
+      return table[index].value
     i++
-  buckets[(index + i) % capacity] = (key, value)
+
+DELETE_OPEN(key):
+  Find key via lookup
+  Mark as TOMBSTONE (can't delete, would break lookup chain)
 ```
 
-**Rehashing:**
+### Double Hashing
+
 ```
-if load_factor > threshold (e.g., 0.75):
-  new_capacity = 2 × old_capacity
-  rehash all entries to new table
+DOUBLE_HASH(key, value):
+  hash1 = HASH1(key)
+  hash2 = HASH2(key)  // Different function, relatively prime to table size
+  i = 0
+  While true:
+    index = (hash1 + i * hash2) % TABLE_SIZE
+    if table[index] is EMPTY:
+      table[index] = (key, value)
+      return
+    i++
+
+Advantage: Reduces primary/secondary clustering
+Cost: Second hash computation
 ```
 
 ---
 
 ## 4️⃣ VISUALIZATION — Simulation & Examples
 
-**Chaining with insertions:**
+### Example: Chaining vs Open Addressing on Same Data
+
 ```
-Insert ("Alice", 25) → Bucket 0
-Insert ("Bob", 28) → Bucket 0 (collision!)
-  Bucket 0: Alice → Bob
+Insert: 3, 8, 13, 6, 11 (hash % 5)
 
-Insert ("Charlie", 35) → Bucket 3
-  Bucket 3: Charlie
-```
+CHAINING:
+[0] → NULL
+[1] → 6 → NULL
+[2] → NULL
+[3] → 13 → 8 → 3 → NULL  (chains built at index 3)
+[4] → 11 → NULL
 
-**Linear Probing with insertions:**
-```
-Array size 5.
+OPEN ADDRESSING (Linear):
+Initial: [_, _, _, _, _]
+Insert 3 (3%5=3): [_, _, _, 3, _]
+Insert 8 (8%5=3, taken): try (3+1)%5=4: [_, _, _, 3, 8]
+Insert 13 (13%5=3, taken): try (3+1)%5=4, taken: try (3+2)%5=0: [13, _, _, 3, 8]
+Insert 6 (6%5=1): [13, 6, _, 3, 8]
+Insert 11 (11%5=1, taken): try (1+1)%5=2: [13, 6, 11, 3, 8]
 
-Insert ("Alice", 25) → hash=0 → index 0
-  [Alice, -, -, -, -]
+Result: [13, 6, 11, 3, 8] (all filled, primary clustering at index 3-4)
 
-Insert ("Bob", 28) → hash=0 → index 0 occupied → try 1
-  [Alice, Bob, -, -, -]
-
-Insert ("Charlie", 35) → hash=0 → indices 0,1 occupied → try 2
-  [Alice, Bob, Charlie, -, -]
+Lookup 8:
+  8%5=3 (occupied, key=3): continue
+  (3+1)%5=4 (occupied, key=8): FOUND
+  2 probes needed
 ```
 
 ---
 
 ## 5️⃣ CRITICAL ANALYSIS — Performance & Robustness
 
-**Chaining:**
-- Advantages: Simple, works well with rehashing, deletions easy
-- Disadvantages: Extra memory for pointers, cache-unfriendly
+### Complexity Comparison
 
-**Open Addressing:**
-- Advantages: Better cache, no extra pointers
-- Disadvantages: Deletions tricky (need tombstones), clustering
+| Operation | Chaining (avg) | Chaining (worst) | Open Addr (avg) | Open Addr (worst) |
+|-----------|----------------|-----------------|-----------------|-------------------|
+| **Lookup** | O(1 + α) | O(n) | O(1/(1-α)) | O(n) |
+| **Insert** | O(1 + α) | O(n) | O(1/(1-α)) | O(n) |
+| **Delete** | O(1 + α) | O(n) | O(1/(1-α)) with tombstone | O(n) |
 
-**Rehashing:** O(n) operation, done occasionally (amortized O(1))
+Where α = load factor (n/m for chaining, max 1 for open addressing)
+
+### Clustering in Open Addressing
+- **Primary clustering:** Long probe sequences from same hash
+- **Secondary clustering:** Different keys produce same probe sequence
+- **Double hashing reduces both:** Different hash2 creates different probes
+- **Quadratic probing:** i² instead of i (reduces primary)
 
 ---
 
 ## 6️⃣ REAL SYSTEM INTEGRATION
 
-**Python dict:** Open addressing with quadratic probing  
-**Java HashMap:** Chaining with linked lists  
-**C++ unordered_map:** Implementation-dependent (chaining or probing)  
+1. **Python 3.6+:** Uses open addressing, quadratic probing, compact dict format
+2. **Java HashMap:** Chaining with bucket arrays, red-black trees if chain > 8
+3. **C++ unordered_map:** Implementation-dependent (often chaining)
+4. **Bloom filters:** Specialized open addressing for membership testing
+5. **Consistent hashing:** Distributed systems, minimizes rehashing
+6. **Cuckoo hashing:** Guarantees O(1) with limited probes
+7. **Perfect hashing:** Zero collisions when key set known
 
 ---
 
 ## 7️⃣ CONCEPT CROSSOVERS
 
-**Builds on:** Hash Tables I, collision theory  
-**Used in:** Caches, databases, symbol tables  
+**Builds On:** Chaining and open addressing both variations of hash tables
+
+**Built Upon By:** Distributed hashing, cuckoo hashing, consistent hashing, bloom filters
 
 ---
 
-## 8️⃣ MATHEMATICAL & THEORETICAL PERSPECTIVE
+## 8️⃣ MATHEMATICAL PERSPECTIVE
 
-**Birthday Paradox:** With m buckets and n keys, expect collisions when n ≈ √m  
-**Load Factor:** α = n/m. For chaining, avg chain length = α.  
-**Clustering (open addressing):** Primary clustering reduces effective capacity
+### Expected Lookup Cost (Chaining)
+```
+E[lookup] = 1 + α  (where α = n/m = load factor)
+Example: α = 0.5 → E[lookup] = 1.5 comparisons
+```
+
+### Expected Lookup Cost (Open Addressing)
+```
+E[lookup] = 1/(1-α)  (only valid for α < 1)
+Example: α = 0.5 → E[lookup] ≈ 2 probes
+Example: α = 0.9 → E[lookup] ≈ 10 probes
+```
 
 ---
 
 ## 9️⃣ ALGORITHMIC DESIGN INTUITION
 
-**When to use chaining:** Frequent deletions, extra space acceptable  
-**When to use open addressing:** Cache matters, deletions rare  
+### When to Use Chaining
+✅ Load factor can exceed 1  
+✅ Deletion is frequent  
+✅ Simplicity valued over cache  
+✅ Unknown dataset size
+
+### When to Use Open Addressing
+✅ Cache efficiency critical  
+✅ Memory tight  
+✅ Load factor < 0.75  
+✅ Deletion rare
 
 ---
 
-## 🔟 KNOWLEDGE CHECK — Socratic Reasoning
+## 🔟 KNOWLEDGE CHECK
 
-**Q1:** Why is rehashing necessary and what's its cost?
-
-**Q2:** Open addressing has primary clustering. What's that and why does it hurt?
-
-**Q3:** Can you delete from open addressing without breaking searches?
-
-**Q4:** Load factor 0.75 vs 0.5 vs 0.9 — which is better and why?
+**Q1: Why is primary clustering a problem in open addressing?**
+**Q2: Why can't load factor exceed 1 in open addressing?**
+**Q3: How does double hashing prevent clustering?**
 
 ---
 
 ## 1️⃣1️⃣ RETENTION HOOK
 
 **One-Liner:**
-> **Hash Tables II: Chaining (simple, pointers) vs Open Addressing (cache-friendly, clustering). Rehashing keeps O(1) amortized.**
+> **Chaining stores collisions in lists; open addressing probes for empty slots. Trade memory (chaining) for cache efficiency (open).**
+
+**Mnemonic:** **"Chaining = Lists, Probing = Slots"**
+
+### 5 Cognitive Lenses
+
+| **Computational** | Chaining: pointer dereference (cache miss). Open: array access (cache hit). Modern CPUs favor open addressing. |
+| **Psychological** | Chaining intuitive, open addressing conceptually harder (primary clustering). |
+| **Design Trade-off** | Space vs cache: chaining uses extra space for pointers but simpler code. |
+| **AI/ML Analogy** | Chaining like multi-head attention (multiple chains). Open like single-head (one probe path). |
+| **Historical Context** | Chaining classical (Knuth 1963), but modern CPUs revived open addressing interest. |
 
 ---
 
-**Supplementary:** Practice implementing both strategies
+**Status:** ✅ Complete  
+**Week 3 Mastery:** All 5 sorting + hashing patterns complete
 

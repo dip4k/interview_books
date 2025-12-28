@@ -249,19 +249,61 @@
     - Mnemonic devices
     - Geometric/visual cue
 
+***
+
+## 🧩 Cognitive Layer Integration (Meta-Learning Enhancements)
+**A. 🖥️ Computational**
+- RAM model, CPU cache lines, pointer dereference cost, TLB impact
+
+**B. 🧠 Psychological**
+- Common intuition traps and mental model corrections
+
+**C. 🔄 Design Trade-off**
+- Memory locality vs flexibility, recursion vs iteration
+
+**D. 🤖 AI/ML Analogy**
+- If relevant: DP ↔ Bellman optimization, search ↔ inference
+
+**E. 📚 Historical Context**
+- Who designed it and what system first used it?
+
+**Each sub-section wil have 3-4 sentences**
+
+***
+
+
+## 📋 Supplementary Outcomes (Beyond 11 Sections)
+
+Every instructional file MUST include:
+
+### **⚔️ Practice Problems** (8-10 problems per day)
+- List problems with sources
+- Varying difficulty levels
+- Real LeetCode/interview problems
+- Solutions not provided (students solve)
+
+### **🎙️ Interview Q&A** (6-10 pairs per day)
+- Common interview questions
+- Detailed answers
+- Follow-up variations
+- Real interview scenarios
+
+### **⚠️ Common Misconceptions** (3-5 per topic)
+- ❌ Wrong belief
+- ✅ Correct understanding
+- Why the misconception exists
+- How to remember the truth
+
+### **📈 Advanced Concepts** (3-5 per topic)
+- Blind spots students miss
+- Related advanced techniques
+- Extensions of the basic concept
+
+### **🔗 External Resources** (3-5 per topic)
+- List relevant web resources and links.
+- 1-2 books references
+
 ---
-
-## 🧠 COGNITIVE LAYER INTEGRATION (5 Lenses)
-
-**Include these perspectives for each topic:**
-
-| Lens | Focus |
-|------|-------|
-| **Computational** | RAM model, CPU cache lines, pointer dereference cost, TLB impact |
-| **Psychological** | Common intuition traps, mental model corrections |
-| **Design Trade-off** | Memory locality vs flexibility, recursion vs iteration |
-| **AI/ML Analogy** | DP ↔ Bellman optimization, search ↔ inference |
-| **Historical Context** | Who designed it? What system first used it? |
 
 > **Primary Objective:**
 > Generate the full instructional content for this topic following the 11-Section Framework outlined above + 5 Cognitive Lenses + supplementry outcomes mentioned below.
@@ -435,15 +477,59 @@ Week_X_Daily_Progress_Checklist.md
 - Mnemonic devices
 - Visual cue
 
-## Cognitive Lenses
-**Include these perspectives for each topic:**
-| Lens | Focus |
-|------|-------|
-| **Computational** | RAM model, CPU cache lines, pointer dereference cost, TLB impact |
-| **Psychological** | Common intuition traps, mental model corrections |
-| **Design Trade-off** | Memory locality vs flexibility, recursion vs iteration |
-| **AI/ML Analogy** | DP ↔ Bellman optimization, search ↔ inference |
-| **Historical Context** | Who designed it? What system first used it? |
+***
+
+## 🧩 Cognitive Layer Integration (Meta-Learning Enhancements)
+**A. 🖥️ Computational**
+- RAM model, CPU cache lines, pointer dereference cost, TLB impact
+
+**B. 🧠 Psychological**
+- Common intuition traps and mental model corrections
+
+**C. 🔄 Design Trade-off**
+- Memory locality vs flexibility, recursion vs iteration
+
+**D. 🤖 AI/ML Analogy**
+- If relevant: DP ↔ Bellman optimization, search ↔ inference
+
+**E. 📚 Historical Context**
+- Who designed it and what system first used it?
+
+**Each sub-section wil have 3-4 sentences**
+
+***
+
+
+## 📋 Supplementary Outcomes (Beyond 11 Sections)
+
+Every instructional file MUST include:
+
+### **⚔️ Practice Problems** (8-10 problems per day)
+- List problems with sources
+- Varying difficulty levels
+- Real LeetCode/interview problems
+- Solutions not provided (students solve)
+
+### **🎙️ Interview Q&A** (6-10 pairs per day)
+- Common interview questions
+- Detailed answers
+- Follow-up variations
+- Real interview scenarios
+
+### **⚠️ Common Misconceptions** (3-5 per topic)
+- ❌ Wrong belief
+- ✅ Correct understanding
+- Why the misconception exists
+- How to remember the truth
+
+### **📈 Advanced Concepts** (3-5 per topic)
+- Blind spots students miss
+- Related advanced techniques
+- Extensions of the basic concept
+
+### **🔗 External Resources** (3-5 per topic)
+- List relevant web resources and links.
+- 1-2 books references
 
 ---
 
@@ -454,7 +540,7 @@ Week_X_Daily_Progress_Checklist.md
 > 1. **Conceptual Gaps:** Identify and explain advanced concepts or "blind spots" that are critical for mastery.
 > 2. **Explicit Detail:** Provide the most comprehensive information available.
 > 3. **Supplementary Data:** Include add-ons (visualizations, mental models) to improve intuition.
-> 4. **External References:** List relevant web resources and links.
+> 4. **External Resources:** List relevant web resources and links.
 ---
 
 ```

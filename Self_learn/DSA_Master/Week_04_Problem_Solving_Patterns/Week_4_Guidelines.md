@@ -1,391 +1,305 @@
-# Week 4: Optimization Techniques - Guidelines
-
-**Week Focus:** Master array/string optimization patterns (Two Pointers, Sliding Window, Prefix Sums, Advanced)  
-**Total Time Investment:** 11-13 hours (learning + practice)  
-**Difficulty Level:** 🔴 Hard  
-**Prerequisites:** Week 1-3 (Arrays, data structures, sorting)
-
----
+# Week 4: Guidelines & Master Plan
 
 ## 📅 Daily Breakdown & Time Allocation
 
-| Day | Topic | Time | Key Outcomes |
-|-----|-------|------|--------------|
-| **1** | Two Pointers Technique | 80 min | O(n) on sorted, converging pattern |
-| **2** | Sliding Window Pattern | 85 min | O(n) on unsorted, dynamic window |
-| **3** | Prefix Sums Optimization | 70 min | O(n) preprocessing, O(1) queries |
-| **4** | Advanced Two Pointers | 70 min | 3Sum, 4Sum, kSum patterns |
-| **5** | Integration & Complex Patterns | 60 min | Combine techniques, tradeoffs |
+| Day | Topic | Time | Morning Focus | Afternoon Focus | Evening Focus |
+|-----|-------|------|---|---|---|
+| **1** | Two Pointers | 120-150 min | Convergent/chasing patterns | 3-4 LeetCode problems | Answer Q&A, trace examples |
+| **2** | Sliding Window (Fixed) | 120-150 min | Window maintenance, rolling aggregates | 3-4 problems (deque, max) | Review summary, roadmap |
+| **3** | Sliding Window (Variable) | 150-180 min | Constraint satisfaction, expansion/contraction | 3-4 hard problems | Deep dive on edge cases |
+| **4** | Prefix Sums | 120-150 min | Preprocessing + query logic | 3-4 range query problems | 2D prefix sums |
+| **5** | Cycle Detection | 150-180 min | Floyd's algorithm mechanics | 3-4 linked list problems | Functional iteration practice |
+| **Week** | **TOTAL** | **630-770 min** | | | |
 
-**Total Core Learning:** ~365 minutes (6.1 hours)  
-**Practice & Consolidation:** ~5-7 hours  
-
----
-
-## 🎯 Week 4 Learning Objectives
-
-### By Week End, You Should:
-
-**Knowledge:**
-- [ ] Understand when each technique works
-- [ ] Know complexity of each approach
-- [ ] Know space vs time tradeoffs
-- [ ] Recognize technique patterns
-- [ ] Understand technique synergies
-
-**Skills:**
-- [ ] Implement two pointers
-- [ ] Implement sliding window
-- [ ] Build prefix sum arrays
-- [ ] Solve 3Sum, 4Sum
-- [ ] Combine techniques strategically
-
-**Application:**
-- [ ] Recognize technique in new problem
-- [ ] Choose optimal approach
-- [ ] Handle duplicates and edge cases
-- [ ] Integrate multiple techniques
-- [ ] Solve complex optimization problems
+**Expected Pace:** 2-2.5 hours daily, 10-12 hours weekly
 
 ---
 
-## 📚 Core Concepts Overview
+## 🎯 Learning Objectives (Week 4)
 
-### Two Pointers
-```
-When: Sorted array, find pairs/elements
-How: Converging from opposite ends
-Complexity: O(n) time, O(1) space
-Key Insight: Directional movement eliminates half
-```
+### Core Competencies
+- [ ] Identify when two-pointer technique applies
+- [ ] Distinguish converging vs chasing pointer patterns
+- [ ] Build and query fixed-size sliding windows O(n)
+- [ ] Implement variable sliding window with constraint satisfaction
+- [ ] Apply prefix sum preprocessing for O(1) range queries
+- [ ] Detect and find cycles using Floyd's algorithm O(1) space
+- [ ] Choose optimal pattern for given problem
+- [ ] Trace algorithms by hand (at least 5 complete examples)
+- [ ] Answer 50+ interview Q&A pairs fluently
+- [ ] Solve 30+ practice problems across patterns
 
-### Sliding Window
-```
-When: Subarray properties, unsorted OK
-How: Expand window, shrink when invalid
-Complexity: O(n) time, O(k) space
-Key Insight: Each element touched ≤ 2 times
-```
+### Sub-Competencies
 
-### Prefix Sums
-```
-When: Multiple range queries, static array
-How: Precompute cumulative sums
-Complexity: O(n) build + O(1) per query
-Key Insight: Trade space for query speed
-```
+**Two Pointers:**
+- [ ] Understand sorted array invariants
+- [ ] Code converging pattern from scratch
+- [ ] Code chasing (in-place) pattern from scratch
+- [ ] Handle palindrome checking
+- [ ] Optimize from O(n²) to O(n)
 
-### Advanced Two Pointers
-```
-When: Multiple targets (3Sum, 4Sum)
-How: Fix k-2 elements, two pointers on rest
-Complexity: O(n^(k-1)) vs O(n^k) brute force
-Key Insight: Nesting reduces exponential complexity
-```
+**Fixed Sliding Window:**
+- [ ] Build initial window O(k)
+- [ ] Slide and update aggregate O(1)
+- [ ] Use deque for window max/min
+- [ ] Handle edge cases (k=n, k>n)
+
+**Variable Sliding Window:**
+- [ ] Expand until constraint satisfied
+- [ ] Contract until constraint violated
+- [ ] Maintain hash map of constraints
+- [ ] Find minimum/maximum valid window
+
+**Prefix Sums:**
+- [ ] Build prefix array O(n)
+- [ ] Query range sums O(1)
+- [ ] Use for subarray sum problems
+- [ ] Handle 2D prefix sums
+- [ ] Use with hash map (subarray sum = k)
+
+**Cycle Detection:**
+- [ ] Understand relative speed convergence
+- [ ] Implement Floyd's algorithm
+- [ ] Find cycle start node
+- [ ] Calculate cycle length
+- [ ] Apply to functional sequences
 
 ---
 
 ## 🔄 Recommended Learning Path
 
-**Best Order to Study:**
+### Morning (90-120 min)
+1. **Read instructional file (Sections 1-6):** 40-50 min
+   - WHY: Motivation + real systems
+   - WHAT: Mental model + intuition
+   - HOW: Detailed mechanics
+   - VISUALIZATION: 3+ full examples
+   - CRITICAL ANALYSIS: Performance + edge cases
+   - REAL SYSTEMS: 5-10 integrations
 
-1. **Day 1:** Two Pointers Foundation
-   - Understand converging from ends
-   - Learn sorted requirement
-   - Practice movement strategy
-   - Solve basic pairs problems
+2. **Trace examples by hand:** 20-30 min
+   - Work through each example yourself
+   - Don't just read, simulate
+   - Cover both normal and edge cases
 
-2. **Day 2:** Sliding Window
-   - Understand expand/shrink logic
-   - Learn without sorting
-   - Practice incremental updates
-   - Solve subarray problems
+3. **Answer Socratic questions:** 15-20 min
+   - Section 10: 5 open-ended questions
+   - Write answers, don't just think
 
-3. **Day 3:** Prefix Sums
-   - Understand cumulative concept
-   - Learn range queries
-   - Extend to 2D
-   - Solve range problems
+### Afternoon (90-120 min)
+1. **Solve 3-4 practice problems:** 75-100 min
+   - Start with easy problems
+   - Match to algorithm from section
+   - Trace solution for your own problem
+   - Handle edge cases
 
-4. **Day 4:** Advanced Two Pointers
-   - Extend to multiple targets
-   - Handle duplicates
-   - Nest pointers efficiently
-   - Solve 3Sum, 4Sum
+2. **Use problem-solving roadmap:** 15-20 min
+   - Identify problem type
+   - Match to correct pattern
+   - Review algorithm before coding
 
-5. **Day 5:** Integration
-   - Combine techniques
-   - Understand synergies
-   - Make design choices
-   - Solve complex problems
+### Evening (40-50 min)
+1. **Review daily checklist:** 10 min
+   - Check off completed objectives
+   - Rate confidence 1-5
 
-**Why This Order?**
-- Two pointers most intuitive (start there)
-- Sliding window extends to unsorted
-- Prefix sums introduces preprocessing
-- Advanced TP multiplies complexity
-- Integration ties everything together
+2. **Study 5+ interview Q&A:** 15-20 min
+   - From daily checklist Q&A
+   - Understand answer fully
+
+3. **Quick summary review:** 10-15 min
+   - Skim summary key concepts
+   - Connect to other patterns
 
 ---
 
 ## ⚠️ Common Mistakes to Avoid
 
-### Two Pointers
+### Mistake 1: Memorizing Without Understanding
+**❌ Problem:** "Just code the solution without understanding why"
+**✅ Solution:** Trace examples completely before coding. Explain algorithm to someone.
 
-| Mistake | Fix |
-|---------|-----|
-| **Forgetting sorted requirement** | Must sort first if unsorted |
-| **Moving wrong pointer** | Move pointer toward target |
-| **Off-by-one errors** | Use left < right, check boundaries |
-| **Not returning all pairs** | Ensure you find all matches |
+### Mistake 2: Skipping Edge Cases
+**❌ Problem:** Solution works for happy path but fails on edge cases
+**✅ Solution:** For each problem, test: empty input, single element, all same values, no solution
 
-### Sliding Window
+### Mistake 3: Not Recognizing Pattern Variants
+**❌ Problem:** "This looks like fixed sliding window but requires variable window"
+**✅ Solution:** Use decision trees in roadmap to classify before solving
 
-| Mistake | Fix |
-|---------|-----|
-| **Metric not incrementally updatable** | Check if metric can update O(1) |
-| **Forgetting window can shrink** | Handle when no valid window |
-| **Missing duplicates in frequency** | Use hash map for counts |
+### Mistake 4: Ignoring Space Complexity
+**❌ Problem:** Use O(n) hash table when O(1) solution exists
+**✅ Solution:** Problem says "O(1) space required"? → Floyd's, two-pointers, in-place operations
 
-### Prefix Sums
+### Mistake 5: Mixing Pointer Patterns
+**❌ Problem:** Two-pointer code in sliding window problem
+**✅ Solution:** Understand distinctly: two-pointers (pair finding), sliding window (contiguous subarrays), Floyd's (cycle detection)
 
-| Mistake | Fix |
-|---------|-----|
-| **Index confusion** | prefix[i+1] = prefix[i] + arr[i] |
-| **Forgetting static requirement** | Updates need rebuild |
-| **Query range errors** | sum(l,r) = prefix[r+1] - prefix[l] |
+### Mistake 6: Not Handling Negative Numbers
+**❌ Problem:** Prefix sums code assumes all positive
+**✅ Solution:** Test with negative numbers. Code should work regardless.
 
-### Advanced Two Pointers
+### Mistake 7: Off-by-One Errors
+**❌ Problem:** Array indices wrong, loop termination incorrect
+**✅ Solution:** Draw array with indices. Code loop bounds explicitly (left=0, right=n-1, etc.)
 
-| Mistake | Fix |
-|---------|-----|
-| **Not skipping duplicates** | Skip duplicates in result |
-| **Forgetting duplicate handling** | Leads to duplicate triplets |
-| **Exponential complexity for large k** | O(n^4) for 4Sum is expensive |
+### Mistake 8: Ignoring Time Constraints
+**❌ Problem:** Optimize O(n) algorithm when n=10⁶ (still passes, but not elegant)
+**✅ Solution:** Check constraints. If interview asks for O(1) space, provide it.
 
 ---
 
-## 🎓 Practice Problems Guide
+## 📚 Practice Problems Guide
 
-### Two Pointers
+### By Difficulty
 
-**Easy:**
-- Two sum II (sorted)
-- Valid palindrome
-- Container with most water
-- Time: 15-25 min
+**Easy (6-8 problems):** 15-20 min each
+- Two Sum II (sorted array)
+- Reverse String (two-pointer)
+- Valid Palindrome
+- Remove Duplicates (sorted array)
+- Range Sum Query (prefix sum)
+- Maximum Average Subarray (fixed window)
+- Linked List Cycle (detection)
 
-**Medium:**
-- 3Sum closest
-- Remove duplicates
-- Reverse words
-- Time: 25-40 min
+**Medium (15-20 problems):** 20-30 min each
+- Container with Most Water (two-pointer)
+- Sliding Window Maximum
+- Minimum Window Substring (variable)
+- Longest Substring Without Repeating
+- Subarray Sum Equals K (prefix)
+- Find Duplicate Number (cycle)
+- 3Sum, 4Sum variants
+- Subarrays with Product Less than K
 
-### Sliding Window
+**Hard (5-8 problems):** 30-40 min each
+- Trapping Rainwater (two-pointer optimization)
+- Sliding Window Maximum (advanced)
+- Subarrays with K Different Integers
+- Circular Array Loop (cycle)
+- Hard variant of each pattern
 
-**Easy:**
-- Longest unique substring
-- Max consecutive ones
-- Time: 15-25 min
+### By Category
 
-**Medium:**
-- Minimum window substring
-- Longest substring with k distinct
-- Sliding window maximum
-- Time: 30-50 min
+**Two-Pointer Problems:** 8 problems
+1. Two Sum II (LeetCode 167) [Easy]
+2. Valid Palindrome (LeetCode 125) [Easy]
+3. Container with Most Water (LeetCode 11) [Medium]
+4. Remove Duplicates (LeetCode 26) [Easy]
+5. 3Sum (LeetCode 15) [Medium]
+6. Trapping Rain Water (LeetCode 42) [Hard]
+7. Reverse String (LeetCode 344) [Easy]
+8. Merge Two Sorted Arrays [Medium]
 
-### Prefix Sums
+**Sliding Window Problems:** 12 problems
+- **Fixed:** Maximum average, max/min in window, duplicate detection
+- **Variable:** Min window substring, longest substring, character count
 
-**Easy:**
-- Running sum
-- Subarray sum equals k
-- Time: 15-20 min
+**Prefix Sum Problems:** 8 problems
+1. Range Sum Query (LeetCode 303) [Easy]
+2. Subarray Sum Equals K (LeetCode 560) [Medium]
+3. Contiguous Array (LeetCode 485) [Medium]
+4. Maximum Subarray (LeetCode 53) [Medium]
+5. 2D Range Sum (LeetCode 304) [Medium]
+6. Binary Subarray with Sum (LeetCode 930) [Medium]
 
-**Medium:**
-- Product of array except self
-- Range sum query
-- 2D rectangle sum
-- Time: 25-40 min
-
-### Advanced Two Pointers
-
-**Medium:**
-- 3Sum
-- 3Sum closest
-- Time: 25-40 min
-
-**Hard:**
-- 4Sum
-- kSum
-- Time: 40-60 min
-
-**Sources:** LeetCode, GeeksforGeeks, HackerRank
+**Cycle Detection Problems:** 6 problems
+1. Linked List Cycle (LeetCode 141) [Easy]
+2. Linked List Cycle II (LeetCode 142) [Medium]
+3. Find Duplicate Number (LeetCode 287) [Medium]
+4. Happy Number (LeetCode 202) [Easy]
+5. Circular Array Loop (LeetCode 457) [Medium]
+6. Cycle in Functional Iteration [Medium]
 
 ---
 
 ## 💼 Interview Preparation
 
-### Common Week 4 Questions
+### Coverage by Week 4
+**Problem-Solving Patterns:** 12-15% additional interview coverage (cumulative: 35-45%)
 
-**Two Pointers:**
-- "Optimize O(n²) nested loop" → Two pointers
-- "Palindrome valid after deletion?"
-- "Container with max water"
+Most common interview questions by pattern:
+- **Two-pointers:** 3-4% (pair finding, removal)
+- **Fixed Sliding Window:** 2-3% (max/min in range)
+- **Variable Sliding Window:** 3-4% (constraint satisfaction)
+- **Prefix Sums:** 2-3% (range queries, subarray)
+- **Cycle Detection:** 1-2% (linked lists, graphs)
 
-**Sliding Window:**
-- "Longest substring without repeating"
-- "Minimum window containing all chars"
-- "Anagrams in string"
+### Mock Interview Strategy
+1. **Identify pattern:** 2-3 min (use decision tree from roadmap)
+2. **Explain approach:** 1-2 min (state complexity)
+3. **Code solution:** 10-15 min (trace example while coding)
+4. **Test edge cases:** 5 min (empty, single element, no solution)
+5. **Optimize if time:** 2-5 min (can we do better?)
 
-**Prefix Sums:**
-- "Range sum queries efficiently"
-- "Product of array except self"
-- "Subarray sum equals k"
-
-**Advanced:**
-- "All unique triplets summing to target"
-- "kSum problem"
-- "Duplicate handling"
-
-### Interview Tips
-1. **Ask about constraints:** "Sorted? Duplicates? Memory limit?"
-2. **Justify choice:** "I chose sliding window because O(n)"
-3. **Discuss trade-offs:** "Two pointers O(1) space vs prefix O(n) space"
-4. **Explain movement:** "When sum too large, shrink window"
-5. **Handle edge cases:** "Empty array, single element, duplicates"
-
----
-
-## 🔗 Resources & References
-
-### Online Platforms
-- **LeetCode:** Array/String sections (all difficulties)
-- **GeeksforGeeks:** Technique tutorials with code
-- **HackerRank:** Array problems
-
-### Visualization Tools
-- **Algorithm Visualizer:** https://algorithm-visualizer.org/
-- **LeetCode Discuss:** Solutions and explanations
-
-### Recommended Books
-- "Cracking the Coding Interview" - Chapter 1-2
-- "The Algorithm Design Manual" - Chapter 2
-- "Elements of Programming Interviews" - Chapter 5
-
----
-
-## ✅ Assessment & Success Criteria
-
-### Knowledge Check
-- [ ] Know when to use each technique
-- [ ] Understand complexity comparison
-- [ ] Know space vs time tradeoffs
-- [ ] Recognize technique patterns
-- [ ] Understand technique combinations
-
-### Practical Skills
-- [ ] Implement two pointers (3+ variations)
-- [ ] Implement sliding window (2+ variations)
-- [ ] Build prefix sum arrays
-- [ ] Solve 3Sum, 4Sum
-- [ ] Combine techniques for complex problems
-
-### Confidence Targets
-| Technique | Target |
-|-----------|--------|
-| Two Pointers | 4-5/5 |
-| Sliding Window | 4-5/5 |
-| Prefix Sums | 3-4/5 |
-| Advanced TP | 3-4/5 |
-| Integration | 3-4/5 |
-| Overall Week 4 | 4/5 |
-
----
-
-## 📊 Connection to Future Weeks
-
-### Week 4.5: Binary Search & Integration
-```
-Week 4 Optimization Techniques
-    ↓
-Week 4.5 Binary search on sorted, bit manipulation
-    ↓
-Week 4 is foundation for Week 4.5 integration
-```
-
-### Week 5: Advanced Algorithms
-```
-Weeks 1-4 Fundamentals, Structures, Sorting, Optimization
-    ↓
-Week 5 Greedy, DP, Graphs (combine with Week 4 techniques)
-    ↓
-Mastery of Week 4 essential for Week 5 success
-```
-
-### Interview Success
-```
-Weeks 1-4 Core Algorithms
-    ↓
-Week 4 Techniques appear in 70%+ of interview problems
-    ↓
-Strong Week 4 → High interview success rate
-```
+**Total per problem:** 20-30 minutes (typical interview pace)
 
 ---
 
 ## ❓ Frequently Asked Questions
 
-### Q1: When to use two pointers vs sliding window?
-**A:** Two pointers if sorted (pairs), sliding window if unsorted (subarrays). Can use both on sorted!
+**Q: What's the difference between two-pointer and sliding window?**
+A: Two-pointer finds pairs/relationships. Sliding window processes contiguous subarrays. Different use cases.
 
-### Q2: Sliding window vs hash table for duplicates?
-**A:** Sliding window if need subarray, hash table if just need existence. Sliding window better O(n).
+**Q: Can I use two-pointer on unsorted arrays?**
+A: Not reliably (sorting first defeats the purpose). Use other approaches (hash table, different pattern).
 
-### Q3: Prefix sums vs segment tree?
-**A:** Prefix for static arrays, segment tree for updates. Prefix simpler, segment more powerful.
+**Q: Does sliding window only work on arrays?**
+A: Works on strings, arrays, any linear sequence. Key: contiguous elements.
 
-### Q4: How to handle 3Sum duplicates correctly?
-**A:** Skip duplicate i values, skip duplicate left/right pointers after finding match.
+**Q: Why is prefix sum O(1) space if I need to store prefix array?**
+A: "O(1) space" for queries means no extra space per query. Preprocessing O(n) space is acceptable.
 
-### Q5: Is advanced two pointers worth learning?
-**A:** Yes! 3Sum/4Sum appear in interviews. Understanding pattern useful for kSum.
+**Q: Can Floyd's algorithm work with speeds other than 2x?**
+A: Yes, any speed > 1 works. Speed 2 is simplest and most common.
 
-### Q6: When to combine techniques?
-**A:** When single technique incomplete. Example: Binary search on answer + sliding window validation.
-
----
-
-## 🎯 Before Moving to Week 4.5
-
-**Checklist:**
-- [ ] Implement all 5-day material
-- [ ] Solve 20+ problems across all techniques
-- [ ] Can recognize technique in new problem
-- [ ] Understand when to combine techniques
-- [ ] Handle all edge cases
-- [ ] Confident explaining approach
-- [ ] Overall confidence: 4/5 or higher
-
-**If not ready:**
-- Review weak technique
-- Solve 10+ more problems in weak area
-- Don't rush to Week 4.5
+**Q: How do I choose between patterns for a problem?**
+A: Use decision trees in problem-solving roadmap. Identify: are you finding pairs (two-pointer), processing ranges (sliding), or solving on subarrays (prefix sum)?
 
 ---
 
-## 📝 Week 4 Quick Summary
+## ✅ Before Proceeding to Week 5
 
-| Technique | When | Complexity | Space |
-|-----------|------|-----------|-------|
-| **Two Pointers** | Sorted pairs | O(n) | O(1) |
-| **Sliding Window** | Unsorted subarray | O(n) | O(k) |
-| **Prefix Sums** | Range queries | O(n)+O(1) | O(n) |
-| **Advanced TP** | Multiple targets | O(n^(k-1)) | O(1) |
+**Checklist before moving on:**
+
+**Knowledge:**
+- [ ] Understand WHY each pattern exists (5 real-world systems minimum)
+- [ ] Can explain each algorithm without looking at code
+- [ ] Know complexity tradeoffs for each
+- [ ] Understand when to use each pattern
+
+**Coding:**
+- [ ] Implement all 5 patterns from scratch (no looking at solutions)
+- [ ] Solve 30+ practice problems (minimum)
+- [ ] Handle edge cases confidently
+- [ ] Code in under 15 minutes for easy, under 25 for medium
+
+**Interview Ready:**
+- [ ] Answer 50+ interview Q&A pairs fluently
+- [ ] Explain real-world applications
+- [ ] Trace algorithms step-by-step
+- [ ] Time yourself (20-30 min per medium problem)
+
+**Confidence Assessment:**
+- [ ] Two-pointers: 4/5+
+- [ ] Fixed sliding window: 4/5+
+- [ ] Variable sliding window: 4/5+
+- [ ] Prefix sums: 4/5+
+- [ ] Cycle detection: 4/5+
+
+If any below 4/5, spend extra time on that pattern before Week 5.
 
 ---
 
-**Status:** Week 4 Ready for Study ✓  
-**Expected Completion:** 1-2 weeks focused study  
-**Success Rate:** 80%+ with consistent practice  
-**Next Step:** Week 4.5 (Binary Search, Bit Manipulation, Integration)
+## 🚀 Next Steps
+
+1. **This Week:** Complete 5 daily instructional files + 30+ problems
+2. **Before Week 5:** Achieve 4/5+ confidence on all patterns
+3. **Week 5:** Trees, heaps, BSTs (builds on pattern thinking)
+4. **Weeks 6+:** Graphs, specialized algorithms (use patterns extensively)
+
+---
+
+**Status:** Week 4 Guidelines Complete  
+**Your focus:** Deep understanding > speed. Master patterns first.
 
